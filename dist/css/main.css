@@ -99,18 +99,21 @@ body {
   align-items: center;
   position: relative; }
   .site-banner .banner-content {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     position: absolute;
-    left: 5%;
-    top: 30%;
+    left: 10%;
+    top: 40%;
     color: #fff; }
     .site-banner .banner-content h1 {
-      font-size: 3em;
-      text-align: center;
-      margin-bottom: 0; }
+      font-size: 3.5em;
+      text-align: left;
+      margin-bottom: 0;
+      margin-top: 0.25em; }
     .site-banner .banner-content h2 {
       margin-top: 0.5em;
       font-size: 2em;
-      text-align: center; }
+      text-align: left; }
 
 .main-intro {
   margin-bottom: 3em;
@@ -432,8 +435,6 @@ body {
     width: 100%; }
   .main-header {
     margin-top: 0; }
-  .site-banner .banner-content {
-    position: static; }
   .main-intro {
     margin-top: 0; }
   .social-links {
@@ -446,4 +447,12 @@ body {
     font-size: 1em; } }
 
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 500px) {
+  .site-banner .banner-content h1 {
+    font-size: 3em;
+    text-align: center; }
+  .site-banner .banner-content h2 {
+    font-size: 1.5em;
+    text-align: center; } }
+
 /* Custom, iPhone Retina */

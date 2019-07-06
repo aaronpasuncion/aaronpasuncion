@@ -99,19 +99,22 @@ body {
   position: relative;
 
   .banner-content {
+    border-top: 1px solid $white-text;
+    border-bottom: 1px solid $white-text;
     position: absolute;
-    left: 5%;
-    top: 30%;
+    left: 10%;
+    top: 40%;
     color: $white-text;
     h1 {
-      font-size: 3em;
-      text-align: center;
+      font-size: 3.5em;
+      text-align: left;
       margin-bottom: 0;
+      margin-top: 0.25em;
     }
     h2 {
       margin-top: 0.5em;
       font-size: 2em;
-      text-align: center;
+      text-align: left;
     }
   }
 }
