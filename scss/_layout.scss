@@ -1,0 +1,254 @@
+/****************************************************
+ _layout.scss - contains all the CSS that handles the
+ layout, such as the container and any grid systems                                           
+****************************************************/
+
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  background: $primary-background;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  a {
+    text-decoration: none;
+    color: $dark-text;
+  }
+}
+
+.menu-btn {
+  position: absolute; //we want it exactly where we want it to be
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  display: none;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #000;
+    transition: all 1s ease-in-out;
+  }
+}
+
+.site-wrapper {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.social-links {
+  position: fixed;
+  top: 50%;
+  right: 5%;
+
+  .social-icon {
+    color: $dark-text;
+    transition: 0.5s all ease-out;
+    &:hover {
+      color: $btn-color;
+    }
+  }
+  i {
+    font-size: 2em;
+    margin-bottom: 0.25em;
+  }
+}
+
+//header
+.main-header {
+  padding: 0 2em;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 0;
+  position: relative;
+}
+.main-nav {
+  list-style: none;
+
+  .nav-link {
+    padding: 1em;
+    &:last-child {
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+//site banner
+.site-banner {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/banner.jpg") no-repeat center;
+  background-size: cover;
+  height: 575px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .banner-content {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    color: $white-text;
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    h2 {
+      margin-top: 0.5em;
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+}
+
+.main-intro {
+  margin-bottom: 3em;
+  margin-top: 3em;
+
+  .btn {
+    margin-top: 1em;
+  }
+}
+
+// box styling
+.box-container {
+  margin: 5em 0;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+
+  .box {
+    flex-basis: 25%;
+    text-align: left;
+    margin: 0 auto;
+    .btn {
+      padding: 0;
+    }
+  }
+}
+
+.img-container {
+  @extend .box-container;
+  margin-left: 5em;
+  position: relative;
+  width: 65%;
+  height: 500px;
+  background: url("../img/default-img-one.jpg") no-repeat center;
+  background-size: cover;
+  // img box
+  .img-box {
+    display: none;
+    background: url("../img/default-img-one.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-description {
+    position: absolute;
+    background: $dark-btn-color;
+    color: $paper;
+    padding: 1em 2em;
+    width: 500px;
+    height: 200px;
+    right: -45%;
+    top: 50;
+  }
+}
+
+// full container
+.full-container {
+  height: 980px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../img/default-full-image.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  .cover-text {
+    height: 100%;
+    letter-spacing: 1.5em;
+    color: $paper;
+    span {
+      font-size: 1.25em;
+    }
+  }
+}
+
+.main-footer {
+  height: 150px;
+}
+
+// side navigation
+#lgMenu {
+  width: 0px;
+  height: 100%;
+  top: 0;
+  right: -400px;
+  overflow: hidden;
+  background-color: $primary-background;
+  position: absolute;
+  //   opacity: 0;
+  z-index: 11;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+
+  .side-nav {
+    height: 100%;
+    width: 100%;
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+
+  .social-links {
+    display: flex;
+    position: static;
+    i {
+      margin: 0.25em;
+    }
+  }
+}
+
+#exit {
+  position: absolute;
+  left: 10px;
+  padding: 0px;
+  top: -10px;
+  font-size: 4em;
+  color: $dark-text;
+  z-index: 999;
+
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+#exit:hover {
+  color: $btn-color;
+}
+
+#lgMenu.enter {
+  opacity: 1;
+  right: 0;
+}

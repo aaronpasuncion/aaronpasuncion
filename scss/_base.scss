@@ -1,0 +1,42 @@
+/****************************************************
+ _BASE.SCSS - Contained within this file are all your
+ resets, varriables, mixins, and any utility classes                                            
+****************************************************/
+
+// variables
+$primary-background: #eee;
+$btn-color: #3aafa9;
+$white-text: #fff;
+$dark-text: #000;
+
+// test colors
+$dark-blue: #17252a;
+$dark-btn-color: #2b7a78;
+$paper: #def2f1;
+$off-white: #feffff;
+
+// headers
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1em;
+  //   line-s
+}
+
+// text utility classes
+.text-center {
+  text-align: center;
+}
+
+// float clear-fix
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}

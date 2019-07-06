@@ -1,0 +1,69 @@
+/****************************************************
+ _components.scss - anything reusable such as buttons,
+ navbars, cards etc.                                          
+****************************************************/
+
+//flexbox
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+//buttons
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: $btn-color;
+  cursor: pointer;
+  transition: 0.5s all ease-out;
+  padding: 0.5em 1em;
+  border: 1px solid $btn-color;
+  &:hover {
+    background: $btn-color;
+    color: $white-text;
+  }
+}
+
+.nav-btn {
+  @extend .btn;
+  border: none;
+  color: $dark-text;
+  &:hover {
+    background: none;
+    color: $dark-btn-color;
+  }
+}
+
+.btn-underline {
+  @extend .btn;
+  text-decoration: underline;
+  text-transform: capitalize;
+  border: none;
+  color: $dark-text;
+  padding-left: 0;
+  &:hover {
+    background: none;
+    color: $btn-color;
+  }
+}
+
+.footer-links {
+  .btn-underline {
+    // margin: 1em;
+    text-decoration: none;
+  }
+}

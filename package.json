@@ -1,0 +1,41 @@
+{
+  "name": "aaronpasuncion",
+  "version": "1.0.0",
+  "description": "Aaron Asuncion Official Portfolio Website",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "aaronpasuncion"
+  },
+  "keywords": [
+    "aaron",
+    "paul",
+    "asuncion",
+    "junior",
+    "front",
+    "end",
+    "web",
+    "developer",
+    "development",
+    "html",
+    "html5",
+    "css",
+    "css3",
+    "javascript",
+    "js",
+    "jquery",
+    "node",
+    "sass",
+    "scss"
+  ],
+  "author": "Aaron Asuncion",
+  "license": "ISC"
+}

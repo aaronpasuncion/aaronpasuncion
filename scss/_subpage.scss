@@ -1,0 +1,140 @@
+// about banner
+.about-banner {
+  justify-content: center;
+  align-items: center;
+  height: 775px;
+  //   width: 100%;
+
+  .about-img {
+    height: 100%;
+    // height: 700px;
+    width: 60%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url("../img/about-banner.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .banner-content {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    width: 40%;
+    height: 100%;
+    color: $white-text;
+    h1 {
+      font-size: 3em;
+      text-align: center;
+    }
+  }
+}
+
+// contact banner
+.contact-banner {
+  position: relative;
+  height: 750px;
+  width: 80%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url("../img/contact-banner.jpg") no-repeat center;
+  background-size: cover;
+  float: right;
+  margin-bottom: 2em;
+  .banner-content {
+    position: absolute;
+    left: -25%;
+    top: 20%;
+    background: rgba(0, 0, 0, 0.9);
+    width: 550px;
+    height: 450px;
+    color: $white-text;
+    text-align: left;
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 0.25em;
+    }
+    form {
+      textarea,
+      input,
+      label {
+        margin-bottom: 0.5em;
+      }
+      .form-input {
+        width: 50%;
+      }
+      .btn {
+        background: none;
+        border-color: $white-text;
+        color: $white-text;
+        font-size: 1em;
+        margin-top: 0.5em;
+        cursor: pointer;
+        &:hover {
+          background: $white-text;
+          color: $dark-text;
+        }
+      }
+    }
+  }
+}
+
+// portfolio page
+.portfolio {
+  min-height: 100%;
+  width: 100%;
+
+  .project {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    margin: 1em;
+    position: relative;
+    transition: 0.5s all ease-out;
+    .portfolio-img {
+      position: absolute;
+      height: 400px;
+      width: 400px;
+      transition: 0.5s all ease-out;
+    }
+
+    .project-details {
+      opacity: 0;
+      h3 {
+        margin-bottom: 0;
+      }
+    }
+
+    &:hover {
+      background: $white-text;
+      .portfolio-img {
+        opacity: 0;
+      }
+      .project-details {
+        opacity: 1;
+        z-index: 99;
+      }
+    }
+  }
+  // project images
+  //   #projectOne {
+  //     background: url("../img/about-banner.jpg") no-repeat center;
+  //     background-size: cover;
+  //   }
+  #projectTwo {
+    background: url("../img/about-banner1.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #projectThree {
+    background: url("../img/banner.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #projectFour {
+    background: url("../img/contact-banner.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #projectFive {
+    background: url("../img/contact-banner-alt.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #projectSix {
+    background: url("../img/default-full-image.jpg") no-repeat center;
+    background-size: cover;
+  }
+}

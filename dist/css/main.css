@@ -1,0 +1,449 @@
+/****************************************************
+ _BASE.SCSS - Contained within this file are all your
+ resets, varriables, mixins, and any utility classes                                            
+****************************************************/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase; }
+
+p {
+  font-size: 1em; }
+
+.text-center {
+  text-align: center; }
+
+.clearfix {
+  content: "";
+  clear: both;
+  display: table; }
+
+/****************************************************
+ _layout.scss - contains all the CSS that handles the
+ layout, such as the container and any grid systems                                           
+****************************************************/
+* {
+  box-sizing: border-box; }
+
+body,
+html {
+  height: 100%; }
+
+body {
+  background: #eee;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.logo a {
+  text-decoration: none;
+  color: #000; }
+
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  display: none; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #000;
+    transition: all 1s ease-in-out; }
+
+.site-wrapper {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto; }
+
+.social-links {
+  position: fixed;
+  top: 50%;
+  right: 5%; }
+  .social-links .social-icon {
+    color: #000;
+    transition: 0.5s all ease-out; }
+    .social-links .social-icon:hover {
+      color: #3aafa9; }
+  .social-links i {
+    font-size: 2em;
+    margin-bottom: 0.25em; }
+
+.main-header {
+  padding: 0 2em;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em 0;
+  position: relative; }
+
+.main-nav {
+  list-style: none; }
+  .main-nav .nav-link {
+    padding: 1em; }
+    .main-nav .nav-link:last-child {
+      padding-right: 0;
+      margin-right: 0; }
+
+.site-banner {
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner.jpg") no-repeat center;
+  background-size: cover;
+  height: 575px;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .site-banner .banner-content {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    color: #fff; }
+    .site-banner .banner-content h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 0; }
+    .site-banner .banner-content h2 {
+      margin-top: 0.5em;
+      font-size: 2em;
+      text-align: center; }
+
+.main-intro {
+  margin-bottom: 3em;
+  margin-top: 3em; }
+  .main-intro .btn, .main-intro .nav-btn, .main-intro .btn-underline {
+    margin-top: 1em; }
+
+.box-container, .img-container {
+  margin: 5em 0;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; }
+  .box-container .box, .img-container .box {
+    flex-basis: 25%;
+    text-align: left;
+    margin: 0 auto; }
+    .box-container .box .btn, .img-container .box .btn, .box-container .box .nav-btn, .img-container .box .nav-btn, .box-container .box .btn-underline, .img-container .box .btn-underline {
+      padding: 0; }
+
+.img-container {
+  margin-left: 5em;
+  position: relative;
+  width: 65%;
+  height: 500px;
+  background: url("../img/default-img-one.jpg") no-repeat center;
+  background-size: cover; }
+  .img-container .img-box {
+    display: none;
+    background: url("../img/default-img-one.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%; }
+  .img-container .img-description {
+    position: absolute;
+    background: #2b7a78;
+    color: #def2f1;
+    padding: 1em 2em;
+    width: 500px;
+    height: 200px;
+    right: -45%;
+    top: 50; }
+
+.full-container {
+  height: 980px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/default-full-image.jpg") no-repeat center;
+  background-size: cover;
+  position: relative; }
+  .full-container .cover-text {
+    height: 100%;
+    letter-spacing: 1.5em;
+    color: #def2f1; }
+    .full-container .cover-text span {
+      font-size: 1.25em; }
+
+.main-footer {
+  height: 150px; }
+
+#lgMenu {
+  width: 0px;
+  height: 100%;
+  top: 0;
+  right: -400px;
+  overflow: hidden;
+  background-color: #eee;
+  position: absolute;
+  z-index: 11;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+  #lgMenu .side-nav {
+    height: 100%;
+    width: 100%; }
+    #lgMenu .side-nav ul {
+      list-style: none;
+      padding: 0; }
+    #lgMenu .side-nav li {
+      margin-bottom: 1em; }
+  #lgMenu .social-links {
+    display: flex;
+    position: static; }
+    #lgMenu .social-links i {
+      margin: 0.25em; }
+
+#exit {
+  position: absolute;
+  left: 10px;
+  padding: 0px;
+  top: -10px;
+  font-size: 4em;
+  color: #000;
+  z-index: 999;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s; }
+
+#exit:hover {
+  color: #3aafa9; }
+
+#lgMenu.enter {
+  opacity: 1;
+  right: 0; }
+
+/****************************************************
+ _components.scss - anything reusable such as buttons,
+ navbars, cards etc.                                          
+****************************************************/
+.flex {
+  display: flex; }
+
+.flex-col {
+  flex-direction: column; }
+
+.flex-wrap {
+  flex-wrap: wrap; }
+
+.flex-center {
+  justify-content: center;
+  align-items: center; }
+
+.btn, .nav-btn, .btn-underline {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: #3aafa9;
+  cursor: pointer;
+  transition: 0.5s all ease-out;
+  padding: 0.5em 1em;
+  border: 1px solid #3aafa9; }
+  .btn:hover, .nav-btn:hover, .btn-underline:hover {
+    background: #3aafa9;
+    color: #fff; }
+
+.nav-btn {
+  border: none;
+  color: #000; }
+  .nav-btn:hover {
+    background: none;
+    color: #2b7a78; }
+
+.btn-underline {
+  text-decoration: underline;
+  text-transform: capitalize;
+  border: none;
+  color: #000;
+  padding-left: 0; }
+  .btn-underline:hover {
+    background: none;
+    color: #3aafa9; }
+
+.footer-links .btn-underline {
+  text-decoration: none; }
+
+.about-banner {
+  justify-content: center;
+  align-items: center;
+  height: 775px; }
+  .about-banner .about-img {
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/about-banner.jpg") no-repeat center;
+    background-size: cover; }
+  .about-banner .banner-content {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    width: 40%;
+    height: 100%;
+    color: #fff; }
+    .about-banner .banner-content h1 {
+      font-size: 3em;
+      text-align: center; }
+
+.contact-banner {
+  position: relative;
+  height: 750px;
+  width: 80%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/contact-banner.jpg") no-repeat center;
+  background-size: cover;
+  float: right;
+  margin-bottom: 2em; }
+  .contact-banner .banner-content {
+    position: absolute;
+    left: -25%;
+    top: 20%;
+    background: rgba(0, 0, 0, 0.9);
+    width: 550px;
+    height: 450px;
+    color: #fff;
+    text-align: left; }
+    .contact-banner .banner-content h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 0.25em; }
+    .contact-banner .banner-content form textarea,
+    .contact-banner .banner-content form input,
+    .contact-banner .banner-content form label {
+      margin-bottom: 0.5em; }
+    .contact-banner .banner-content form .form-input {
+      width: 50%; }
+    .contact-banner .banner-content form .btn, .contact-banner .banner-content form .nav-btn, .contact-banner .banner-content form .btn-underline {
+      background: none;
+      border-color: #fff;
+      color: #fff;
+      font-size: 1em;
+      margin-top: 0.5em;
+      cursor: pointer; }
+      .contact-banner .banner-content form .btn:hover, .contact-banner .banner-content form .nav-btn:hover, .contact-banner .banner-content form .btn-underline:hover {
+        background: #fff;
+        color: #000; }
+
+.portfolio {
+  min-height: 100%;
+  width: 100%; }
+  .portfolio .project {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    margin: 1em;
+    position: relative;
+    transition: 0.5s all ease-out; }
+    .portfolio .project .portfolio-img {
+      position: absolute;
+      height: 400px;
+      width: 400px;
+      transition: 0.5s all ease-out; }
+    .portfolio .project .project-details {
+      opacity: 0; }
+      .portfolio .project .project-details h3 {
+        margin-bottom: 0; }
+    .portfolio .project:hover {
+      background: #fff; }
+      .portfolio .project:hover .portfolio-img {
+        opacity: 0; }
+      .portfolio .project:hover .project-details {
+        opacity: 1;
+        z-index: 99; }
+  .portfolio #projectTwo {
+    background: url("../img/about-banner1.jpg") no-repeat center;
+    background-size: cover; }
+  .portfolio #projectThree {
+    background: url("../img/banner.jpg") no-repeat center;
+    background-size: cover; }
+  .portfolio #projectFour {
+    background: url("../img/contact-banner.jpg") no-repeat center;
+    background-size: cover; }
+  .portfolio #projectFive {
+    background: url("../img/contact-banner-alt.jpg") no-repeat center;
+    background-size: cover; }
+  .portfolio #projectSix {
+    background: url("../img/default-full-image.jpg") no-repeat center;
+    background-size: cover; }
+
+/*==========  Non-Mobile First Method  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .main-nav {
+    display: none; }
+  .menu-btn {
+    display: flex;
+    flex-direction: column; }
+  .box-container .box, .img-container .box {
+    flex-basis: 20%; }
+  .img-container {
+    margin: 0;
+    background: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column; }
+    .img-container .img-box {
+      display: block;
+      height: 400px; }
+    .img-container .img-description {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: static;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      width: 100%; }
+  .contact-banner {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .contact-banner .banner-content {
+      position: static;
+      width: 450px;
+      height: 450px; } }
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .site-banner .banner-content {
+    position: static; }
+  .box-container, .img-container {
+    margin-bottom: 2em;
+    height: 100%; }
+    .box-container .box, .img-container .box {
+      text-align: center;
+      flex-basis: 100%; }
+  .about-banner {
+    flex-direction: column;
+    height: 100%; }
+    .about-banner .about-img {
+      width: 100%;
+      height: 445px; }
+    .about-banner .banner-content {
+      height: 50%;
+      width: 100%; }
+      .about-banner .banner-content h1 {
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: 0; } }
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .site-wrapper {
+    width: 100%; }
+  .main-header {
+    margin-top: 0; }
+  .site-banner .banner-content {
+    position: static; }
+  .main-intro {
+    margin-top: 0; }
+  .social-links {
+    display: none; }
+  .full-container .cover-text {
+    flex-direction: column; }
+  .main-footer {
+    flex-direction: column; }
+  .btn, .nav-btn, .btn-underline {
+    font-size: 1em; } }
+
+/* Extra Small Devices, Phones */
+/* Custom, iPhone Retina */
