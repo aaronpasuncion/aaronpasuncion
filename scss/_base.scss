@@ -40,3 +40,48 @@ p {
   clear: both;
   display: table;
 }
+
+//keyframes
+@keyframes scaleY-display {
+  from {
+    transform: scaley(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+
+}
+@keyframes main-title {
+  from {
+    opacity: 0;
+    left: 10%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes banner-link-slide {
+  from {
+    opacity: 0;
+    margin-left: 2em;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+@keyframes sub-title {
+  from {
+    opacity: 0;
+    margin-right: 2em;
+  }
+  to {
+    opacity: 1;
+    margin-right: 0;
+  }
+}

@@ -9,36 +9,6 @@
     display: flex;
     flex-direction: column;
   }
-  .box-container {
-    .box {
-      flex-basis: 20%;
-    }
-  }
-
-  .img-container {
-    margin: 0;
-    background: none;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-
-    .img-box {
-      display: block;
-      height: 400px;
-    }
-
-    .img-description {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: static;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      width: 100%;
-    }
-  }
 
   // subpages
   .contact-banner {
@@ -61,16 +31,6 @@
   .site-banner {
     .banner-content {
       position: static;
-    }
-  }
-
-  // box container
-  .box-container {
-    margin-bottom: 2em;
-    height: 100%;
-    .box {
-      text-align: center;
-      flex-basis: 100%;
     }
   }
 
@@ -101,22 +61,25 @@
     width: 100%;
   }
 
-  .main-header {
-    margin-top: 0;
+  .site-banner {
+    .banner-content {
+      h1 {
+        font-size: 3em;
+        text-align: center;
+      }
+      h2 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    }
   }
 
-  .main-intro {
+  .main-header {
     margin-top: 0;
   }
 
   .social-links {
     display: none;
-  }
-
-  .full-container {
-    .cover-text {
-      flex-direction: column;
-    }
   }
 
   .main-footer {
@@ -131,18 +94,6 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 500px) {
-  .site-banner {
-    .banner-content {
-      h1 {
-        font-size: 3em;
-        text-align: center;
-      }
-      h2 {
-        font-size: 1.5em;
-        text-align: center;
-      }
-    }
-  }
 }
 
 /* Custom, iPhone Retina */

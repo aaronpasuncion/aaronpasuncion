@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body,
 html {
@@ -12,11 +13,21 @@ html {
 }
 body {
   background: $primary-background;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   padding: 0;
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+}
 .logo {
   a {
     text-decoration: none;
@@ -37,13 +48,13 @@ body {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #000;
+    background: $dark-blue;
     transition: all 1s ease-in-out;
   }
 }
 
 .site-wrapper {
-  width: 70%;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
 }
@@ -54,7 +65,7 @@ body {
   right: 5%;
 
   .social-icon {
-    color: $dark-text;
+    color: $dark-blue;
     transition: 0.5s all ease-out;
     &:hover {
       color: $btn-color;
@@ -68,126 +79,136 @@ body {
 
 //header
 .main-header {
-  padding: 0 2em;
   justify-content: space-between;
   align-items: center;
-  margin: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 0;
   position: relative;
 }
 .main-nav {
   list-style: none;
 
   .nav-link {
-    padding: 1em;
-    &:last-child {
+    .btn {
       padding-right: 0;
-      margin-right: 0;
     }
   }
 }
 
 //site banner
 .site-banner {
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/banner.jpg") no-repeat center;
-  background-size: cover;
-  height: 575px;
-  justify-content: center;
-  align-items: center;
+  height: 825px;
+  width: 100%;
+
   position: relative;
 
-  .banner-content {
-    border-top: 1px solid $white-text;
-    border-bottom: 1px solid $white-text;
+  .main-title {
     position: absolute;
+    z-index: 9999;
+    // left: 40%;
+    // top: 35%;
+    line-height: 0.9;
     left: 10%;
-    top: 40%;
-    color: $white-text;
+    bottom: 0;
+    opacity: 0;
+    transition: 1s all ease-out;
+    animation: main-title 1s forwards 2s;
     h1 {
-      font-size: 3.5em;
+      font-size: 6em;
+      font-weight: 900;
       text-align: left;
       margin-bottom: 0;
-      margin-top: 0.25em;
+      margin-top: 0;
+      color: $dark-blue;
+      // color: $paper;
     }
-    h2 {
-      margin-top: 0.5em;
-      font-size: 2em;
-      text-align: left;
-    }
-  }
-}
-
-.main-intro {
-  margin-bottom: 3em;
-  margin-top: 3em;
-
-  .btn {
-    margin-top: 1em;
-  }
-}
-
-// box styling
-.box-container {
-  margin: 5em 0;
-  justify-content: center;
-  align-items: center;
-  height: 40vh;
-
-  .box {
-    flex-basis: 25%;
-    text-align: left;
-    margin: 0 auto;
-    .btn {
-      padding: 0;
-    }
-  }
-}
-
-.img-container {
-  @extend .box-container;
-  margin-left: 5em;
-  position: relative;
-  width: 65%;
-  height: 500px;
-  background: url("../img/default-img-one.jpg") no-repeat center;
-  background-size: cover;
-  // img box
-  .img-box {
-    display: none;
-    background: url("../img/default-img-one.jpg") no-repeat center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-  }
-
-  .img-description {
-    position: absolute;
-    background: $dark-btn-color;
-    color: $paper;
-    padding: 1em 2em;
-    width: 500px;
-    height: 200px;
-    right: -45%;
-    top: 50;
-  }
-}
-
-// full container
-.full-container {
-  height: 980px;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../img/default-full-image.jpg") no-repeat center;
-  background-size: cover;
-  position: relative;
-  .cover-text {
-    height: 100%;
-    letter-spacing: 1.5em;
-    color: $paper;
     span {
-      font-size: 1.25em;
+      // color: $paper;
+    }
+  }
+
+  .about-box {
+    position: absolute;
+    right: 15%;
+    top: 15%;
+    height: 250px;
+    width: 250px;
+    z-index: 25;
+    background: $dark-btn-color;
+    transition: 1s all ease-out;
+    &:hover {
+      height: 300px;
+      width: 300px;
+    }
+  }
+
+  .banner-left {
+    background: $btn-color;
+    position: relative;
+    color: $dark-blue;
+    width: 50%;
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: scaleY-display 1s forwards 0.5s;
+    // height: 100%;
+    padding: 1em;
+    transition: 1s all ease-out;
+
+    // about me description
+    .about-content {
+      transition: 1s all ease-out;
+      margin-top: 1em;
+      .about-me {
+        border-left: 2px solid $dark-blue;
+        padding-left: 1em;
+        width: 400px;
+      }
+      .skillset {
+        h1 {
+          display: inline-block;
+          border-bottom: 2px solid $dark-blue;
+        }
+      }
+    }
+  }
+
+  .banner-right {
+    background: $paper;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    transition: 1s all ease-out;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    animation: scaleY-display 1s forwards 0.5s;
+    padding: 1em;
+
+    .box:nth-child(1) {
+      left: 15%;
+      top: 15%;
+    }
+    .box:nth-child(2) {
+      left: 45%;
+      top: 45%;
+    }
+    .box:nth-child(3) {
+      left: 15%;
+      top: 65%;
+    }
+
+    .sub-title {
+      width: 100%;
+      position: absolute;
+      margin-right: 2em;
+      opacity: 0;
+      animation: sub-title 1s forwards 2s;
+      text-align: right;
+      bottom: 0;
+      right: 0;
+      z-index: 33;
+      h2 {
+        margin: 0;
+      }
     }
   }
 }
@@ -206,7 +227,7 @@ body {
   background-color: $primary-background;
   position: absolute;
   //   opacity: 0;
-  z-index: 11;
+  z-index: 999;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 

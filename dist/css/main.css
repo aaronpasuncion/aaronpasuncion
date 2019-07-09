@@ -20,12 +20,49 @@ p {
   clear: both;
   display: table; }
 
+@keyframes banner-left {
+  from {
+    transform: scaley(0); }
+  to {
+    transform: scaleY(1); } }
+
+@keyframes banner-right {
+  from {
+    transform: scaley(0); }
+  to {
+    transform: scaleY(1); } }
+
+@keyframes main-title {
+  from {
+    opacity: 0;
+    left: 10%; }
+  to {
+    opacity: 1;
+    left: 0; } }
+
+@keyframes banner-link-slide {
+  from {
+    opacity: 0;
+    margin-left: 2em; }
+  to {
+    opacity: 1;
+    margin-left: 0; } }
+
+@keyframes sub-title {
+  from {
+    opacity: 0;
+    margin-right: 2em; }
+  to {
+    opacity: 1;
+    margin-right: 0; } }
+
 /****************************************************
  _layout.scss - contains all the CSS that handles the
  layout, such as the container and any grid systems                                           
 ****************************************************/
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 body,
 html {
@@ -33,9 +70,19 @@ html {
 
 body {
   background: #eee;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   padding: 0;
   margin: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500; }
 
 .logo a {
   text-decoration: none;
@@ -53,11 +100,11 @@ body {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #000;
+    background: #17252a;
     transition: all 1s ease-in-out; }
 
 .site-wrapper {
-  width: 70%;
+  width: 80%;
   height: 100%;
   margin: 0 auto; }
 
@@ -66,7 +113,7 @@ body {
   top: 50%;
   right: 5%; }
   .social-links .social-icon {
-    color: #000;
+    color: #17252a;
     transition: 0.5s all ease-out; }
     .social-links .social-icon:hover {
       color: #3aafa9; }
@@ -75,99 +122,100 @@ body {
     margin-bottom: 0.25em; }
 
 .main-header {
-  padding: 0 2em;
   justify-content: space-between;
   align-items: center;
-  margin: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 0;
   position: relative; }
 
 .main-nav {
   list-style: none; }
-  .main-nav .nav-link {
-    padding: 1em; }
-    .main-nav .nav-link:last-child {
-      padding-right: 0;
-      margin-right: 0; }
+  .main-nav .nav-link .btn, .main-nav .nav-link .nav-btn, .main-nav .nav-link .btn-underline {
+    padding-right: 0; }
 
 .site-banner {
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner.jpg") no-repeat center;
-  background-size: cover;
-  height: 575px;
-  justify-content: center;
-  align-items: center;
+  height: 825px;
+  width: 100%;
   position: relative; }
-  .site-banner .banner-content {
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+  .site-banner .main-title {
     position: absolute;
+    z-index: 9999;
+    line-height: 0.9;
     left: 10%;
-    top: 40%;
-    color: #fff; }
-    .site-banner .banner-content h1 {
-      font-size: 3.5em;
+    bottom: 0;
+    opacity: 0;
+    transition: 1s all ease-out;
+    animation: main-title 1s forwards 2s; }
+    .site-banner .main-title h1 {
+      font-size: 6em;
+      font-weight: 900;
       text-align: left;
       margin-bottom: 0;
-      margin-top: 0.25em; }
-    .site-banner .banner-content h2 {
-      margin-top: 0.5em;
-      font-size: 2em;
-      text-align: left; }
-
-.main-intro {
-  margin-bottom: 3em;
-  margin-top: 3em; }
-  .main-intro .btn, .main-intro .nav-btn, .main-intro .btn-underline {
-    margin-top: 1em; }
-
-.box-container, .img-container {
-  margin: 5em 0;
-  justify-content: center;
-  align-items: center;
-  height: 40vh; }
-  .box-container .box, .img-container .box {
-    flex-basis: 25%;
-    text-align: left;
-    margin: 0 auto; }
-    .box-container .box .btn, .img-container .box .btn, .box-container .box .nav-btn, .img-container .box .nav-btn, .box-container .box .btn-underline, .img-container .box .btn-underline {
-      padding: 0; }
-
-.img-container {
-  margin-left: 5em;
-  position: relative;
-  width: 65%;
-  height: 500px;
-  background: url("../img/default-img-one.jpg") no-repeat center;
-  background-size: cover; }
-  .img-container .img-box {
-    display: none;
-    background: url("../img/default-img-one.jpg") no-repeat center;
-    background-size: cover;
-    width: 100%;
-    height: 100%; }
-  .img-container .img-description {
+      margin-top: 0;
+      color: #17252a; }
+  .site-banner .about-box {
     position: absolute;
+    right: 15%;
+    top: 15%;
+    height: 250px;
+    width: 250px;
+    z-index: 25;
     background: #2b7a78;
-    color: #def2f1;
-    padding: 1em 2em;
-    width: 500px;
-    height: 200px;
-    right: -45%;
-    top: 50; }
-
-.full-container {
-  height: 980px;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/default-full-image.jpg") no-repeat center;
-  background-size: cover;
-  position: relative; }
-  .full-container .cover-text {
+    transition: 1s all ease-out; }
+    .site-banner .about-box:hover {
+      height: 300px;
+      width: 300px; }
+  .site-banner .banner-left {
+    background: #3aafa9;
+    position: relative;
+    color: #17252a;
+    width: 50%;
+    transform-origin: top;
+    transform: scaleY(0);
+    animation: banner-left 1s forwards 0.5s;
+    padding: 1em;
+    transition: 1s all ease-out; }
+    .site-banner .banner-left .about-content {
+      transition: 1s all ease-out;
+      margin-top: 1em; }
+      .site-banner .banner-left .about-content .about-me {
+        border-left: 2px solid #17252a;
+        padding-left: 1em;
+        width: 400px; }
+      .site-banner .banner-left .about-content .skillset h1 {
+        display: inline-block;
+        border-bottom: 2px solid #17252a; }
+  .site-banner .banner-right {
+    background: #def2f1;
+    position: relative;
     height: 100%;
-    letter-spacing: 1.5em;
-    color: #def2f1; }
-    .full-container .cover-text span {
-      font-size: 1.25em; }
+    width: 50%;
+    transition: 1s all ease-out;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    animation: banner-right 1s forwards 0.5s;
+    padding: 1em; }
+    .site-banner .banner-right .box:nth-child(1) {
+      left: 15%;
+      top: 15%; }
+    .site-banner .banner-right .box:nth-child(2) {
+      left: 45%;
+      top: 45%; }
+    .site-banner .banner-right .box:nth-child(3) {
+      left: 15%;
+      top: 65%; }
+    .site-banner .banner-right .sub-title {
+      width: 100%;
+      position: absolute;
+      margin-right: 2em;
+      opacity: 0;
+      animation: sub-title 1s forwards 2s;
+      text-align: right;
+      bottom: 0;
+      right: 0;
+      z-index: 33; }
+      .site-banner .banner-right .sub-title h2 {
+        margin: 0; }
 
 .main-footer {
   height: 150px; }
@@ -180,7 +228,7 @@ body {
   overflow: hidden;
   background-color: #eee;
   position: absolute;
-  z-index: 11;
+  z-index: 999;
   transition: all 0.5s;
   -webkit-transition: all 0.5s; }
   #lgMenu .side-nav {
@@ -221,6 +269,13 @@ body {
  _components.scss - anything reusable such as buttons,
  navbars, cards etc.                                          
 ****************************************************/
+.banner-link-click {
+  width: 90% !important; }
+
+.opacity-hide {
+  opacity: 0;
+  transition: 1s ease-out; }
+
 .flex {
   display: flex; }
 
@@ -233,6 +288,69 @@ body {
 .flex-center {
   justify-content: center;
   align-items: center; }
+
+/* HOME BANNER */
+.banner-link {
+  position: relative;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-left: 2em;
+  opacity: 0;
+  animation: banner-link-slide 1s forwards 3s;
+  display: inline-block; }
+  .banner-link h1 {
+    margin-bottom: 0; }
+  .banner-link h1::after {
+    transition: 0.5s all ease-out;
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    background: #17252a; }
+  .banner-link h1:hover::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #17252a; }
+
+.skills-header {
+  border-right: 2px solid #17252a;
+  padding-right: 1em; }
+  .skills-header .skill-title {
+    font-size: 1em;
+    text-align: right; }
+
+.box {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background: #3aafa9; }
+
+.bar-graph {
+  width: 100%; }
+  .bar-graph .skills-bar {
+    width: 50%;
+    height: 30px;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+    background: #2b7a78; }
+    .bar-graph .skills-bar h3 {
+      margin: 0;
+      float: right; }
+    .bar-graph .skills-bar .bar-capacity {
+      display: inline-block;
+      width: 0%;
+      transition: 1s all ease-out 1s;
+      height: 30px;
+      background: #def2f1; }
+
+.main-title-left {
+  left: 0 !important; }
 
 .btn, .nav-btn, .btn-underline {
   text-decoration: none;
@@ -373,27 +491,6 @@ body {
   .menu-btn {
     display: flex;
     flex-direction: column; }
-  .box-container .box, .img-container .box {
-    flex-basis: 20%; }
-  .img-container {
-    margin: 0;
-    background: none;
-    width: 100%;
-    height: 100%;
-    flex-direction: column; }
-    .img-container .img-box {
-      display: block;
-      height: 400px; }
-    .img-container .img-description {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: static;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      width: 100%; }
   .contact-banner {
     width: 100%;
     height: 80%;
@@ -409,12 +506,6 @@ body {
 @media only screen and (max-width: 992px) {
   .site-banner .banner-content {
     position: static; }
-  .box-container, .img-container {
-    margin-bottom: 2em;
-    height: 100%; }
-    .box-container .box, .img-container .box {
-      text-align: center;
-      flex-basis: 100%; }
   .about-banner {
     flex-direction: column;
     height: 100%; }
@@ -433,26 +524,20 @@ body {
 @media only screen and (max-width: 768px) {
   .site-wrapper {
     width: 100%; }
+  .site-banner .banner-content h1 {
+    font-size: 3em;
+    text-align: center; }
+  .site-banner .banner-content h2 {
+    font-size: 1.5em;
+    text-align: center; }
   .main-header {
-    margin-top: 0; }
-  .main-intro {
     margin-top: 0; }
   .social-links {
     display: none; }
-  .full-container .cover-text {
-    flex-direction: column; }
   .main-footer {
     flex-direction: column; }
   .btn, .nav-btn, .btn-underline {
     font-size: 1em; } }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width: 500px) {
-  .site-banner .banner-content h1 {
-    font-size: 3em;
-    text-align: center; }
-  .site-banner .banner-content h2 {
-    font-size: 1.5em;
-    text-align: center; } }
-
 /* Custom, iPhone Retina */

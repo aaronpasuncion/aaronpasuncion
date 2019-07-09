@@ -2,7 +2,18 @@
  _components.scss - anything reusable such as buttons,
  navbars, cards etc.                                          
 ****************************************************/
+// colors
 
+// banner width increase
+.banner-link-click {
+  width: 90% !important;
+}
+
+// display element (opacity: 1)
+.opacity-hide {
+  opacity: 0;
+  transition: 1s ease-out;
+}
 //flexbox
 .flex {
   display: flex;
@@ -21,6 +32,88 @@
   align-items: center;
 }
 
+/* HOME BANNER */
+// banner link
+.banner-link {
+  position: relative;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-left: 2em;
+  opacity: 0;
+  animation: banner-link-slide 1s forwards 3s;
+  display: inline-block;
+
+  h1 {
+    margin-bottom: 0;
+  }
+  h1::after {
+    transition: 0.5s all ease-out;
+    position: absolute;
+    content: "";
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    background: $dark-blue;
+  }
+  h1:hover {
+    &::after {
+      position: absolute;
+      content: "";
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $dark-blue;
+    }
+  }
+}
+
+// left-banner
+.skills-header {
+  border-right: 2px solid $dark-blue;
+  padding-right: 1em;
+  .skill-title {
+    font-size: 1em;
+    text-align: right;
+  }
+}
+
+// right-banner
+.box {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background: $btn-color;
+}
+
+.bar-graph {
+  width: 50%;
+  .skills-bar {
+    width: 50%;
+    height: 30px;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+    background: $dark-btn-color;
+    h3 {
+      // display: inline-block;
+      margin: 0;
+      float: right;
+    }
+
+    .bar-capacity {
+      display: inline-block;
+      width: 0%;
+      transition: 1s all ease-out 1s;
+      height: 30px;
+      background: $paper;
+    }
+  }
+}
+
+.main-title-left {
+  left: 0 !important;
+}
 //buttons
 
 .btn {
