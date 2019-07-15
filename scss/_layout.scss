@@ -13,7 +13,7 @@ html {
 }
 body {
   background: $primary-background;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 300;
   padding: 0;
   margin: 0;
@@ -25,8 +25,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Archivo", sans-serif;
-  font-weight: 500;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 .logo {
   a {
@@ -87,7 +87,7 @@ h6 {
 }
 .main-nav {
   list-style: none;
-
+  font-size: 1.1em;
   .nav-link {
     .btn {
       padding-right: 0;
@@ -99,46 +99,52 @@ h6 {
 .site-banner {
   height: 825px;
   width: 100%;
-
   position: relative;
+
+  .center-logo {
+    position: absolute;
+    display: flex;
+    height: 200px;
+    width: 200px;
+    z-index: 999;
+    top: 312px;
+    left: -100px;
+    .logo-text {
+      font-size: 5em;
+      color: $dark-blue;
+    }
+    .left-side {
+      transform-origin: right;
+      transform: scaleX(0);
+      animation: scaleX-display 1s forwards 2s;
+      // height: 100%;
+      width: 50%;
+      background: $paper;
+    }
+    .right-side {
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: scaleX-display 1s forwards 2s;
+      // height: 100%;
+      width: 50%;
+      background: $btn-color;
+    }
+  }
 
   .main-title {
     position: absolute;
     z-index: 9999;
-    // left: 40%;
-    // top: 35%;
     line-height: 0.9;
-    left: 10%;
     bottom: 0;
     opacity: 0;
     transition: 1s all ease-out;
     animation: main-title 1s forwards 2s;
     h1 {
-      font-size: 6em;
+      font-size: 5em;
       font-weight: 900;
-      text-align: left;
       margin-bottom: 0;
       margin-top: 0;
       color: $dark-blue;
-      // color: $paper;
-    }
-    span {
-      // color: $paper;
-    }
-  }
-
-  .about-box {
-    position: absolute;
-    right: 15%;
-    top: 15%;
-    height: 250px;
-    width: 250px;
-    z-index: 25;
-    background: $dark-btn-color;
-    transition: 1s all ease-out;
-    &:hover {
-      height: 300px;
-      width: 300px;
     }
   }
 
@@ -152,21 +158,49 @@ h6 {
     animation: scaleY-display 1s forwards 0.5s;
     // height: 100%;
     padding: 1em;
-    transition: 1s all ease-out;
+    transition: 0.5s all ease-out;
 
     // about me description
     .about-content {
       transition: 1s all ease-out;
       margin-top: 1em;
-      .about-me {
-        border-left: 2px solid $dark-blue;
-        padding-left: 1em;
+      .about-left {
         width: 400px;
+        .about-me {
+          border-left: 2px solid $dark-blue;
+          padding-left: 1em;
+          width: 400px;
+          h3 {
+            display: none;
+          }
+        }
       }
-      .skillset {
+      .about-right {
+        width: 50%;
+        transition: 2s all ease-out;
         h1 {
-          display: inline-block;
-          border-bottom: 2px solid $dark-blue;
+          text-align: center;
+        }
+
+        .personal-skills {
+          .p-skill {
+            margin-left: 2em;
+            opacity: 0;
+            display: none;
+            text-align: center;
+          }
+          .p-skill:nth-child(1) {
+            animation: slide-left 1s forwards 0.6s;
+          }
+          .p-skill:nth-child(2) {
+            animation: slide-left 1s forwards 0.8s;
+          }
+          .p-skill:nth-child(3) {
+            animation: slide-left 1s forwards 1s;
+          }
+          .p-skill:nth-child(4) {
+            animation: slide-left 1s forwards 1.2s;
+          }
         }
       }
     }
@@ -175,25 +209,31 @@ h6 {
   .banner-right {
     background: $paper;
     position: relative;
-    height: 100%;
     width: 50%;
-    transition: 1s all ease-out;
     transform-origin: bottom;
     transform: scaleY(0);
     animation: scaleY-display 1s forwards 0.5s;
+    transition: 0.5s all ease-out;
     padding: 1em;
-
-    .box:nth-child(1) {
-      left: 15%;
-      top: 15%;
-    }
-    .box:nth-child(2) {
-      left: 45%;
-      top: 45%;
-    }
-    .box:nth-child(3) {
-      left: 15%;
-      top: 65%;
+    .creation-content {
+      height: 650px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: 1s all ease-out;
+      .box:nth-child(1) {
+        // background: $box-color1;
+        animation: slide-left 1s forwards 0.8s;
+      }
+      .box:nth-child(2) {
+        // background: $box-color2;
+        animation: slide-left 1s forwards 1s;
+      }
+      .box:nth-child(3) {
+        // background: $box-color3;
+        animation: slide-left 1s forwards 1.2s;
+      }
     }
 
     .sub-title {

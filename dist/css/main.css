@@ -15,22 +15,38 @@ p {
 .text-center {
   text-align: center; }
 
+.text-underline {
+  display: inline-block;
+  border-bottom: 2px solid #17252a; }
+
 .clearfix {
   content: "";
   clear: both;
   display: table; }
 
-@keyframes banner-left {
+@keyframes scaleY-display {
   from {
     transform: scaley(0); }
   to {
     transform: scaleY(1); } }
 
-@keyframes banner-right {
+@keyframes scaleX-display {
   from {
-    transform: scaley(0); }
+    transform: scaleX(0); }
   to {
-    transform: scaleY(1); } }
+    transform: scaleX(1); } }
+
+@keyframes scaleX-hide {
+  from {
+    transform: scaleX(1); }
+  to {
+    transform: scaleX(0); } }
+
+@keyframes opacity-show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @keyframes main-title {
   from {
@@ -40,11 +56,31 @@ p {
     opacity: 1;
     left: 0; } }
 
-@keyframes banner-link-slide {
+@keyframes slide-left {
   from {
     opacity: 0;
     margin-left: 2em; }
   to {
+    opacity: 1;
+    margin-left: 0; } }
+
+@keyframes slide-left-display {
+  from {
+    display: none;
+    opacity: 0;
+    margin-left: 2em; }
+  to {
+    display: block;
+    opacity: 1;
+    margin-left: 0; } }
+
+@keyframes slide-right-display {
+  from {
+    display: none;
+    opacity: 0;
+    margin-right: 2em; }
+  to {
+    display: block;
     opacity: 1;
     margin-left: 0; } }
 
@@ -55,6 +91,14 @@ p {
   to {
     opacity: 1;
     margin-right: 0; } }
+
+@keyframes box-anim {
+  from {
+    opacity: 0;
+    margin-top: 3em; }
+  to {
+    opacity: 1;
+    margin-top: 0; } }
 
 /****************************************************
  _layout.scss - contains all the CSS that handles the
@@ -70,7 +114,7 @@ html {
 
 body {
   background: #eee;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 300;
   padding: 0;
   margin: 0; }
@@ -81,8 +125,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Archivo", sans-serif;
-  font-weight: 500; }
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase; }
 
 .logo a {
   text-decoration: none;
@@ -129,7 +173,8 @@ h6 {
   position: relative; }
 
 .main-nav {
-  list-style: none; }
+  list-style: none;
+  font-size: 1.1em; }
   .main-nav .nav-link .btn, .main-nav .nav-link .nav-btn, .main-nav .nav-link .btn-underline {
     padding-right: 0; }
 
@@ -137,34 +182,43 @@ h6 {
   height: 825px;
   width: 100%;
   position: relative; }
+  .site-banner .center-logo {
+    position: absolute;
+    display: flex;
+    height: 200px;
+    width: 200px;
+    z-index: 999;
+    top: 312px;
+    left: -100px; }
+    .site-banner .center-logo .logo-text {
+      font-size: 5em;
+      color: #17252a; }
+    .site-banner .center-logo .left-side {
+      transform-origin: right;
+      transform: scaleX(0);
+      animation: scaleX-display 1s forwards 2s;
+      width: 50%;
+      background: #def2f1; }
+    .site-banner .center-logo .right-side {
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: scaleX-display 1s forwards 2s;
+      width: 50%;
+      background: #3aafa9; }
   .site-banner .main-title {
     position: absolute;
     z-index: 9999;
     line-height: 0.9;
-    left: 10%;
     bottom: 0;
     opacity: 0;
     transition: 1s all ease-out;
     animation: main-title 1s forwards 2s; }
     .site-banner .main-title h1 {
-      font-size: 6em;
+      font-size: 5em;
       font-weight: 900;
-      text-align: left;
       margin-bottom: 0;
       margin-top: 0;
       color: #17252a; }
-  .site-banner .about-box {
-    position: absolute;
-    right: 15%;
-    top: 15%;
-    height: 250px;
-    width: 250px;
-    z-index: 25;
-    background: #2b7a78;
-    transition: 1s all ease-out; }
-    .site-banner .about-box:hover {
-      height: 300px;
-      width: 300px; }
   .site-banner .banner-left {
     background: #3aafa9;
     position: relative;
@@ -172,38 +226,60 @@ h6 {
     width: 50%;
     transform-origin: top;
     transform: scaleY(0);
-    animation: banner-left 1s forwards 0.5s;
+    animation: scaleY-display 1s forwards 0.5s;
     padding: 1em;
-    transition: 1s all ease-out; }
+    transition: 0.5s all ease-out; }
     .site-banner .banner-left .about-content {
       transition: 1s all ease-out;
       margin-top: 1em; }
-      .site-banner .banner-left .about-content .about-me {
-        border-left: 2px solid #17252a;
-        padding-left: 1em;
+      .site-banner .banner-left .about-content .about-left {
         width: 400px; }
-      .site-banner .banner-left .about-content .skillset h1 {
-        display: inline-block;
-        border-bottom: 2px solid #17252a; }
+        .site-banner .banner-left .about-content .about-left .about-me {
+          border-left: 2px solid #17252a;
+          padding-left: 1em;
+          width: 400px; }
+          .site-banner .banner-left .about-content .about-left .about-me h3 {
+            display: none; }
+      .site-banner .banner-left .about-content .about-right {
+        width: 50%;
+        transition: 2s all ease-out; }
+        .site-banner .banner-left .about-content .about-right h1 {
+          text-align: center; }
+        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill {
+          margin-left: 2em;
+          opacity: 0;
+          display: none;
+          text-align: center; }
+        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(1) {
+          animation: slide-left 1s forwards 0.6s; }
+        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(2) {
+          animation: slide-left 1s forwards 0.8s; }
+        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(3) {
+          animation: slide-left 1s forwards 1s; }
+        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(4) {
+          animation: slide-left 1s forwards 1.2s; }
   .site-banner .banner-right {
     background: #def2f1;
     position: relative;
-    height: 100%;
     width: 50%;
-    transition: 1s all ease-out;
     transform-origin: bottom;
     transform: scaleY(0);
-    animation: banner-right 1s forwards 0.5s;
+    animation: scaleY-display 1s forwards 0.5s;
+    transition: 0.5s all ease-out;
     padding: 1em; }
-    .site-banner .banner-right .box:nth-child(1) {
-      left: 15%;
-      top: 15%; }
-    .site-banner .banner-right .box:nth-child(2) {
-      left: 45%;
-      top: 45%; }
-    .site-banner .banner-right .box:nth-child(3) {
-      left: 15%;
-      top: 65%; }
+    .site-banner .banner-right .creation-content {
+      height: 650px;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: 1s all ease-out; }
+      .site-banner .banner-right .creation-content .box:nth-child(1) {
+        animation: slide-left 1s forwards 0.8s; }
+      .site-banner .banner-right .creation-content .box:nth-child(2) {
+        animation: slide-left 1s forwards 1s; }
+      .site-banner .banner-right .creation-content .box:nth-child(3) {
+        animation: slide-left 1s forwards 1.2s; }
     .site-banner .banner-right .sub-title {
       width: 100%;
       position: absolute;
@@ -270,7 +346,10 @@ h6 {
  navbars, cards etc.                                          
 ****************************************************/
 .banner-link-click {
-  width: 90% !important; }
+  width: 100% !important; }
+
+.hide-display {
+  display: none !important; }
 
 .opacity-hide {
   opacity: 0;
@@ -296,23 +375,24 @@ h6 {
   margin-top: 1em;
   margin-left: 2em;
   opacity: 0;
-  animation: banner-link-slide 1s forwards 3s;
-  display: inline-block; }
+  animation: slide-left 1s forwards 3s;
+  display: inline-block;
+  z-index: 9999; }
   .banner-link h1 {
     margin-bottom: 0; }
   .banner-link h1::after {
     transition: 0.5s all ease-out;
     position: absolute;
     content: "";
-    height: 2px;
+    height: 3px;
     bottom: 0;
     left: 0;
-    width: 80%;
+    width: 70%;
     background: #17252a; }
   .banner-link h1:hover::after {
     position: absolute;
     content: "";
-    height: 2px;
+    height: 3px;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -320,37 +400,50 @@ h6 {
 
 .skills-header {
   border-right: 2px solid #17252a;
-  padding-right: 1em; }
+  padding-right: 0.25em; }
   .skills-header .skill-title {
     font-size: 1em;
-    text-align: right; }
-
-.box {
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  background: #3aafa9; }
+    text-align: center; }
+    .skills-header .skill-title h3 {
+      margin-top: 0.7em; }
 
 .bar-graph {
   width: 100%; }
   .bar-graph .skills-bar {
-    width: 50%;
+    width: 100%;
     height: 30px;
     margin-top: 1em;
     margin-bottom: 0.75em;
-    background: #2b7a78; }
+    background: #77bdba; }
     .bar-graph .skills-bar h3 {
       margin: 0;
       float: right; }
     .bar-graph .skills-bar .bar-capacity {
       display: inline-block;
       width: 0%;
-      transition: 1s all ease-out 1s;
       height: 30px;
-      background: #def2f1; }
+      background: #def2f1;
+      transition: 1s all ease-out 1s; }
 
-.main-title-left {
-  left: 0 !important; }
+.box {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 3em;
+  border-left: 2px solid #17252a;
+  padding-left: 1em;
+  margin-left: 2em;
+  opacity: 0;
+  transition: 1s all ease-out;
+  letter-spacing: 4px; }
+  .box .box-head {
+    transition: all 0.5s ease-out;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2em; }
+
+.box-text {
+  animation: slide-left-display 1s forwards 1.5s; }
 
 .btn, .nav-btn, .btn-underline {
   text-decoration: none;
@@ -504,8 +597,26 @@ h6 {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
-  .site-banner .banner-content {
-    position: static; }
+  .site-banner {
+    min-height: 100%;
+    height: 100%;
+    flex-direction: column; }
+    .site-banner .main-title {
+      top: 0;
+      right: 0;
+      text-align: right; }
+      .site-banner .main-title h1 {
+        font-size: 3em; }
+    .site-banner .center-logo {
+      display: none; }
+    .site-banner .banner-left {
+      width: 100%; }
+    .site-banner .banner-right {
+      width: 100%; }
+    .site-banner .banner-content {
+      position: static; }
+  .site-wrapper {
+    width: 100%; }
   .about-banner {
     flex-direction: column;
     height: 100%; }
@@ -522,8 +633,6 @@ h6 {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-  .site-wrapper {
-    width: 100%; }
   .site-banner .banner-content h1 {
     font-size: 3em;
     text-align: center; }

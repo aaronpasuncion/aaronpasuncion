@@ -29,9 +29,34 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   .site-banner {
+    min-height: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    .main-title {
+      top: 0;
+      right: 0;
+      text-align: right;
+      h1 {
+        font-size: 3em;
+      }
+    }
+
+    .center-logo {
+      display: none;
+    }
+    .banner-left {
+      width: 100%;
+    }
+    .banner-right {
+      width: 100%;
+    }
     .banner-content {
       position: static;
     }
+  }
+  .site-wrapper {
+    width: 100%;
   }
 
   // subpages
@@ -57,10 +82,6 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-  .site-wrapper {
-    width: 100%;
-  }
-
   .site-banner {
     .banner-content {
       h1 {

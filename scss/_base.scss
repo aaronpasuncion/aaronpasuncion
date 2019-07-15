@@ -9,6 +9,11 @@ $btn-color: #3aafa9;
 $white-text: #fff;
 $dark-text: #000;
 
+//complimentary colors for btn-color
+$box-color1: #77bdba;
+$box-color2: #9ffcf8;
+$box-color3: #297d79;
+
 // test colors
 $dark-blue: #17252a;
 $dark-btn-color: #2b7a78;
@@ -34,6 +39,11 @@ p {
   text-align: center;
 }
 
+.text-underline {
+  display: inline-block;
+  border-bottom: 2px solid $dark-blue;
+}
+
 // float clear-fix
 .clearfix {
   content: "";
@@ -51,8 +61,32 @@ p {
   }
 }
 
-
+@keyframes scaleX-display {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
+@keyframes scaleX-hide {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes opacity-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes main-title {
   from {
     opacity: 0;
@@ -64,12 +98,36 @@ p {
   }
 }
 
-@keyframes banner-link-slide {
+@keyframes slide-left {
   from {
     opacity: 0;
     margin-left: 2em;
   }
   to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@keyframes slide-left-display {
+  from {
+    display: none;
+    opacity: 0;
+    margin-left: 2em;
+  }
+  to {
+    display: block;
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+@keyframes slide-right-display {
+  from {
+    display: none;
+    opacity: 0;
+    margin-right: 2em;
+  }
+  to {
+    display: block;
     opacity: 1;
     margin-left: 0;
   }
@@ -83,5 +141,16 @@ p {
   to {
     opacity: 1;
     margin-right: 0;
+  }
+}
+
+@keyframes box-anim {
+  from {
+    opacity: 0;
+    margin-top: 3em;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
   }
 }

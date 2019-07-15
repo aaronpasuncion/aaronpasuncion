@@ -6,7 +6,11 @@
 
 // banner width increase
 .banner-link-click {
-  width: 90% !important;
+  width: 100% !important;
+}
+
+.hide-display {
+  display: none !important;
 }
 
 // display element (opacity: 1)
@@ -40,8 +44,9 @@
   margin-top: 1em;
   margin-left: 2em;
   opacity: 0;
-  animation: banner-link-slide 1s forwards 3s;
+  animation: slide-left 1s forwards 3s;
   display: inline-block;
+  z-index: 9999;
 
   h1 {
     margin-bottom: 0;
@@ -50,17 +55,17 @@
     transition: 0.5s all ease-out;
     position: absolute;
     content: "";
-    height: 2px;
+    height: 3px;
     bottom: 0;
     left: 0;
-    width: 80%;
+    width: 70%;
     background: $dark-blue;
   }
   h1:hover {
     &::after {
       position: absolute;
       content: "";
-      height: 2px;
+      height: 3px;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -72,31 +77,25 @@
 // left-banner
 .skills-header {
   border-right: 2px solid $dark-blue;
-  padding-right: 1em;
+  padding-right: 0.25em;
   .skill-title {
     font-size: 1em;
-    text-align: right;
+    text-align: center;
+    h3 {
+      margin-top: 0.7em;
+    }
   }
 }
 
-// right-banner
-.box {
-  position: absolute;
-  height: 300px;
-  width: 300px;
-  background: $btn-color;
-}
-
 .bar-graph {
-  width: 50%;
+  width: 100%;
   .skills-bar {
-    width: 50%;
+    width: 100%;
     height: 30px;
     margin-top: 1em;
     margin-bottom: 0.75em;
-    background: $dark-btn-color;
+    background: $box-color1;
     h3 {
-      // display: inline-block;
       margin: 0;
       float: right;
     }
@@ -104,16 +103,37 @@
     .bar-capacity {
       display: inline-block;
       width: 0%;
-      transition: 1s all ease-out 1s;
       height: 30px;
       background: $paper;
+      transition: 1s all ease-out 1s;
     }
   }
 }
 
-.main-title-left {
-  left: 0 !important;
+// right-banner
+.box {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 3em;
+  border-left: 2px solid $dark-blue;
+  padding-left: 1em;
+  margin-left: 2em;
+  opacity: 0;
+  transition: 1s all ease-out;
+  letter-spacing: 4px;
+  .box-head {
+    transition: all 0.5s ease-out;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2em;
+  }
 }
+
+.box-text {
+  animation: slide-left-display 1s forwards 1.5s;
+}
+
 //buttons
 
 .btn {
