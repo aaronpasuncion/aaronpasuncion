@@ -115,6 +115,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  width: 600px;
   margin-top: 3em;
   border-left: 2px solid $dark-blue;
   padding-left: 1em;
@@ -123,15 +124,17 @@
   transition: 1s all ease-out;
   letter-spacing: 4px;
   .box-head {
+    font-size: 2em;
     transition: all 0.5s ease-out;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 2em;
   }
-}
-
-.box-text {
-  animation: slide-left-display 1s forwards 1.5s;
+  .box-text {
+    animation: slide-left-display 1s forwards 1.5s;
+    h3 {
+      font-size: 1em;
+    }
+  }
 }
 
 //buttons

@@ -429,6 +429,7 @@ h6 {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  width: 600px;
   margin-top: 3em;
   border-left: 2px solid #17252a;
   padding-left: 1em;
@@ -437,13 +438,14 @@ h6 {
   transition: 1s all ease-out;
   letter-spacing: 4px; }
   .box .box-head {
+    font-size: 2em;
     transition: all 0.5s ease-out;
     margin-top: 0;
-    margin-bottom: 0;
-    font-size: 2em; }
-
-.box-text {
-  animation: slide-left-display 1s forwards 1.5s; }
+    margin-bottom: 0; }
+  .box .box-text {
+    animation: slide-left-display 1s forwards 1.5s; }
+    .box .box-text h3 {
+      font-size: 1em; }
 
 .btn, .nav-btn, .btn-underline {
   text-decoration: none;
@@ -611,12 +613,22 @@ h6 {
       display: none; }
     .site-banner .banner-left {
       width: 100%; }
+      .site-banner .banner-left .about-content .about-left {
+        width: 350px; }
+        .site-banner .banner-left .about-content .about-left .about-me {
+          width: 350px; }
     .site-banner .banner-right {
       width: 100%; }
     .site-banner .banner-content {
       position: static; }
   .site-wrapper {
     width: 100%; }
+  .social-links {
+    display: none; }
+  .box {
+    margin-top: 1em; }
+    .box:nth-child(1) {
+      margin-top: 0; }
   .about-banner {
     flex-direction: column;
     height: 100%; }
@@ -633,12 +645,24 @@ h6 {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+  .site-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; }
   .site-banner .banner-content h1 {
     font-size: 3em;
     text-align: center; }
   .site-banner .banner-content h2 {
     font-size: 1.5em;
     text-align: center; }
+  .box {
+    width: 100%; }
+    .box .box-head {
+      font-size: 1.5em; }
+    .box .box-text {
+      font-size: 1em; }
   .main-header {
     margin-top: 0; }
   .social-links {
@@ -649,4 +673,12 @@ h6 {
     font-size: 1em; } }
 
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 500px) {
+  .site-banner .banner-left .about-content {
+    flex-direction: column; }
+    .site-banner .banner-left .about-content .about-right {
+      width: 100%; }
+  .site-banner .box {
+    margin-top: 0; } }
+
 /* Custom, iPhone Retina */
