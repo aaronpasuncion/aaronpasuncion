@@ -115,8 +115,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  width: 600px;
-  margin-top: 3em;
+  width: 100%;
   border-left: 2px solid $dark-blue;
   padding-left: 1em;
   margin-left: 2em;
@@ -130,7 +129,7 @@
     margin-bottom: 0;
   }
   .box-text {
-    animation: slide-left-display 1s forwards 1.5s;
+    animation: slide-left-display 1s forwards 2s;
     h3 {
       font-size: 1em;
     }

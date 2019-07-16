@@ -10,13 +10,14 @@
 body,
 html {
   height: 100%;
+  margin: 0 auto;
+  padding: 0px;
+  overflow-x: hidden;
 }
 body {
   background: $primary-background;
   font-family: "Oswald", sans-serif;
   font-weight: 300;
-  padding: 0;
-  margin: 0;
 }
 
 h1,
@@ -57,6 +58,7 @@ h6 {
   width: 80%;
   height: 100%;
   margin: 0 auto;
+  padding: 0px;
 }
 
 .social-links {
@@ -97,7 +99,7 @@ h6 {
 
 //site banner
 .site-banner {
-  height: 825px;
+  height: 850px;
   width: 100%;
   position: relative;
 
@@ -133,8 +135,10 @@ h6 {
 
   .main-title {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     z-index: 9999;
-    line-height: 0.9;
+    line-height: 1;
     bottom: 0;
     opacity: 0;
     transition: 1s all ease-out;
@@ -216,7 +220,7 @@ h6 {
     transition: 0.5s all ease-out;
     padding: 1em;
     .creation-content {
-      height: 650px;
+      height: 80%;
       display: flex;
       align-content: center;
       justify-content: center;
