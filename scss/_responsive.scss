@@ -5,9 +5,27 @@
   .main-nav {
     display: none;
   }
+
+  .site-banner {
+    .main-title {
+      h1 {
+        font-size: 4em;
+      }
+    }
+  }
+
+  .about-right {
+    .personal-skills {
+      text-align: center;
+    }
+  }
   .menu-btn {
     display: flex;
     flex-direction: column;
+  }
+
+  .social-links {
+    display: none;
   }
 
   // subpages
@@ -29,7 +47,7 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   .site-banner {
-    min-height: 100%;
+    // min-height: 100%;
     height: 100%;
     flex-direction: column;
 
@@ -67,23 +85,6 @@
   .site-wrapper {
     width: 100%;
   }
-  .social-links {
-    display: none;
-  }
-
-  .box {
-    margin-top: 0;
-    margin-bottom: 1em;
-    justify-content: center;
-    align-items: center;
-    border-left: none;
-    .box-head {
-      border-bottom: 2px solid $dark-blue;
-    }
-  }
-  .box-text {
-    text-align: center;
-  }
 
   // subpages
   .about-banner {
@@ -106,17 +107,85 @@
   }
 }
 
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .site-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+  }
+  .site-banner {
+    .banner-content {
+      h1 {
+        font-size: 3em;
+        text-align: center;
+      }
+      h2 {
+        font-size: 1.5em;
+        text-align: center;
+      }
+    }
+  }
+  .box {
+    width: 100%;
+    .box-head {
+      font-size: 1.5em;
+    }
+    .box-text {
+      font-size: 1em;
+    }
+  }
+
+  .main-header {
+    margin-top: 0;
+  }
+
+  .social-links {
+    display: none;
+  }
+
+  .main-footer {
+    flex-direction: column;
+  }
+
+  // components
+  .btn {
+    font-size: 1em;
+  }
+}
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 500px) {
   .site-banner {
     .banner-left {
+      height: 1250px;
       .about-content {
         flex-direction: column;
+        .about-left {
+          width: 100%;
+          .about-me {
+            width: 100%;
+          }
+        }
         .about-right {
           width: 100%;
         }
       }
     }
+    .banner-right {
+      height: 800px;
+    }
+  }
+  .banner-link {
+    h1 {
+      cursor: none;
+    }
+  }
+
+  .box {
+    width: 450px;
   }
 }
 

@@ -5,8 +5,12 @@
 // colors
 
 // banner width increase
-.banner-link-click {
+.banner-active {
   width: 100% !important;
+}
+
+.banner-link-inactive {
+  width: 25% !important;
 }
 
 .hide-display {
@@ -112,16 +116,16 @@
 
 // right-banner
 .box {
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 100%;
   border-left: 2px solid $dark-blue;
   padding-left: 1em;
   margin-left: 2em;
   opacity: 0;
   transition: 1s all ease-out;
-  letter-spacing: 4px;
+  // width: 600px;
+  letter-spacing: 2px;
   .box-head {
     font-size: 2em;
     transition: all 0.5s ease-out;
@@ -132,6 +136,8 @@
     animation: slide-left-display 1s forwards 2s;
     h3 {
       font-size: 1em;
+      margin-top: 0;
+      margin-bottom: 0.5em;
     }
   }
 }

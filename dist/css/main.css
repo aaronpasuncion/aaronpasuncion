@@ -112,8 +112,7 @@ body,
 html {
   height: 100%;
   margin: 0 auto;
-  padding: 0px;
-  overflow-x: hidden; }
+  padding: 0px; }
 
 body {
   background: #eee;
@@ -232,28 +231,30 @@ h6 {
     transform: scaleY(0);
     animation: scaleY-display 1s forwards 0.5s;
     padding: 1em;
-    transition: 0.5s all ease-out; }
+    transition: 1s all ease-out; }
     .site-banner .banner-left .about-content {
       transition: 1s all ease-out;
-      margin-top: 1em; }
-      .site-banner .banner-left .about-content .about-left {
+      margin-top: 1em;
+      width: 100%; }
+      .site-banner .banner-left .about-content .about-left .about-me {
+        border-left: 2px solid #17252a;
+        padding-left: 1em;
         width: 400px; }
-        .site-banner .banner-left .about-content .about-left .about-me {
-          border-left: 2px solid #17252a;
-          padding-left: 1em;
-          width: 400px; }
-          .site-banner .banner-left .about-content .about-left .about-me h3 {
-            display: none; }
+        .site-banner .banner-left .about-content .about-left .about-me h3 {
+          display: none; }
       .site-banner .banner-left .about-content .about-right {
+        justify-content: flex-start;
+        align-items: center;
         width: 50%;
         transition: 2s all ease-out; }
         .site-banner .banner-left .about-content .about-right h1 {
-          text-align: center; }
+          text-align: center;
+          margin-top: 0; }
         .site-banner .banner-left .about-content .about-right .personal-skills .p-skill {
-          margin-left: 2em;
           opacity: 0;
-          display: none;
-          text-align: center; }
+          display: none; }
+          .site-banner .banner-left .about-content .about-right .personal-skills .p-skill h3 {
+            text-align: center; }
         .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(1) {
           animation: slide-left 1s forwards 0.6s; }
         .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(2) {
@@ -266,10 +267,11 @@ h6 {
     background: #def2f1;
     position: relative;
     width: 50%;
+    min-height: 100%;
     transform-origin: bottom;
     transform: scaleY(0);
     animation: scaleY-display 1s forwards 0.5s;
-    transition: 0.5s all ease-out;
+    transition: 1s all ease-out;
     padding: 1em; }
     .site-banner .banner-right .creation-content {
       height: 80%;
@@ -349,8 +351,11 @@ h6 {
  _components.scss - anything reusable such as buttons,
  navbars, cards etc.                                          
 ****************************************************/
-.banner-link-click {
+.banner-active {
   width: 100% !important; }
+
+.banner-link-inactive {
+  width: 25% !important; }
 
 .hide-display {
   display: none !important; }
@@ -430,16 +435,15 @@ h6 {
       transition: 1s all ease-out 1s; }
 
 .box {
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 100%;
   border-left: 2px solid #17252a;
   padding-left: 1em;
   margin-left: 2em;
   opacity: 0;
   transition: 1s all ease-out;
-  letter-spacing: 4px; }
+  letter-spacing: 2px; }
   .box .box-head {
     font-size: 2em;
     transition: all 0.5s ease-out;
@@ -448,7 +452,9 @@ h6 {
   .box .box-text {
     animation: slide-left-display 1s forwards 2s; }
     .box .box-text h3 {
-      font-size: 1em; }
+      font-size: 1em;
+      margin-top: 0;
+      margin-bottom: 0.5em; }
 
 .btn, .nav-btn, .btn-underline {
   text-decoration: none;
@@ -586,9 +592,15 @@ h6 {
 @media only screen and (max-width: 1200px) {
   .main-nav {
     display: none; }
+  .site-banner .main-title h1 {
+    font-size: 4em; }
+  .about-right .personal-skills {
+    text-align: center; }
   .menu-btn {
     display: flex;
     flex-direction: column; }
+  .social-links {
+    display: none; }
   .contact-banner {
     width: 100%;
     height: 80%;
@@ -603,7 +615,6 @@ h6 {
 /* Medium Devices, Desktops */
 @media only screen and (max-width: 992px) {
   .site-banner {
-    min-height: 100%;
     height: 100%;
     flex-direction: column; }
     .site-banner .main-title {
@@ -627,18 +638,6 @@ h6 {
       position: static; }
   .site-wrapper {
     width: 100%; }
-  .social-links {
-    display: none; }
-  .box {
-    margin-top: 0;
-    margin-bottom: 1em;
-    justify-content: center;
-    align-items: center;
-    border-left: none; }
-    .box .box-head {
-      border-bottom: 2px solid #17252a; }
-  .box-text {
-    text-align: center; }
   .about-banner {
     flex-direction: column;
     height: 100%; }
@@ -653,11 +652,52 @@ h6 {
         text-align: center;
         margin-bottom: 0; } }
 
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .site-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; }
+  .site-banner .banner-content h1 {
+    font-size: 3em;
+    text-align: center; }
+  .site-banner .banner-content h2 {
+    font-size: 1.5em;
+    text-align: center; }
+  .box {
+    width: 100%; }
+    .box .box-head {
+      font-size: 1.5em; }
+    .box .box-text {
+      font-size: 1em; }
+  .main-header {
+    margin-top: 0; }
+  .social-links {
+    display: none; }
+  .main-footer {
+    flex-direction: column; }
+  .btn, .nav-btn, .btn-underline {
+    font-size: 1em; } }
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 500px) {
-  .site-banner .banner-left .about-content {
-    flex-direction: column; }
-    .site-banner .banner-left .about-content .about-right {
-      width: 100%; } }
+  .site-banner .banner-left {
+    height: 1250px; }
+    .site-banner .banner-left .about-content {
+      flex-direction: column; }
+      .site-banner .banner-left .about-content .about-left {
+        width: 100%; }
+        .site-banner .banner-left .about-content .about-left .about-me {
+          width: 100%; }
+      .site-banner .banner-left .about-content .about-right {
+        width: 100%; }
+  .site-banner .banner-right {
+    height: 800px; }
+  .banner-link h1 {
+    cursor: none; }
+  .box {
+    width: 450px; } }
 
 /* Custom, iPhone Retina */
