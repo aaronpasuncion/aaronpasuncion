@@ -9,7 +9,7 @@
   width: 100% !important;
 }
 
-.banner-link-inactive {
+.banner-inactive {
   width: 25% !important;
 }
 
@@ -86,18 +86,19 @@
     font-size: 1em;
     text-align: center;
     h3 {
-      margin-top: 0.7em;
+      margin-top: 1.5em;
     }
   }
 }
 
+// technical skills
 .bar-graph {
   width: 100%;
   .skills-bar {
     width: 100%;
     height: 30px;
-    margin-top: 1em;
-    margin-bottom: 0.75em;
+    margin-top: 1.5em;
+    margin-bottom: 1.25em;
     background: $box-color1;
     h3 {
       margin: 0;
@@ -121,7 +122,7 @@
   flex-direction: column;
   border-left: 2px solid $dark-blue;
   padding-left: 1em;
-  margin-left: 2em;
+  margin-bottom: 1.5em;
   opacity: 0;
   transition: 1s all ease-out;
   // width: 600px;

@@ -4,9 +4,7 @@ $(document).ready(function() {
   // about section
   $("#aboutMe").on("click", function() {
     if ($("#rightBanner").hasClass("banner-active")) {
-      //  hide the creation content section
-      $("#rightBanner").removeClass("banner-active");
-      $("#create").removeClass("creation-content");
+      creationHide();
       aboutDisplay();
     } else if ($("#leftBanner").hasClass("banner-active")) {
       aboutHide();
@@ -73,7 +71,10 @@ $(document).ready(function() {
     $(".about-me h3").css("display", "flex");
     if (!$("#create").hasClass("opacity-hide")) {
       $("#create").addClass("opacity-hide");
+      $("#rightBanner").removeClass("banner-inactive");
     }
+    // add banner inactive to the other banner
+    $("#rightBanner").addClass("banner-inactive");
   }
 
   // hide left banner content
@@ -82,6 +83,8 @@ $(document).ready(function() {
     $(".about-content").addClass("opacity-hide");
     $(".about-right").css("display", "none");
     $(".p-skill").css("display", "none");
+    // remove banner inactive to the other banner
+    $("#rightBanner").removeClass("banner-inactive");
   }
 
   /* CREATION SECTION FUNCTIONS*/
@@ -91,6 +94,8 @@ $(document).ready(function() {
     $("#rightBanner").addClass("banner-active");
     $("#create").removeClass("opacity-hide");
     $("#create").addClass("creation-content");
+    // add banner inactive to the other banner
+    $("#leftBanner").addClass("banner-inactive");
   }
 
   // hide creation section
@@ -99,6 +104,8 @@ $(document).ready(function() {
     $("#rightBanner").removeClass("banner-active");
     $("#create").removeClass("creation-content");
     $("#create").addClass("opacity-hide");
+    // remove banner inactive from the other banner
+    $("#leftBanner").removeClass("banner-inactive");
   }
 
   // hide center logo function

@@ -230,44 +230,53 @@ h6 {
     transform-origin: top;
     transform: scaleY(0);
     animation: scaleY-display 1s forwards 0.5s;
+    height: 100%;
     padding: 1em;
     transition: 1s all ease-out; }
     .site-banner .banner-left .about-content {
       transition: 1s all ease-out;
       margin-top: 1em;
       width: 100%; }
-      .site-banner .banner-left .about-content .about-left .about-me {
-        border-left: 2px solid #17252a;
-        padding-left: 1em;
-        width: 400px; }
-        .site-banner .banner-left .about-content .about-left .about-me h3 {
-          display: none; }
+      .site-banner .banner-left .about-content .about-left {
+        width: 100%; }
+        .site-banner .banner-left .about-content .about-left .about-me {
+          border-left: 2px solid #17252a;
+          padding-left: 1em;
+          width: 400px; }
+          .site-banner .banner-left .about-content .about-left .about-me h3 {
+            display: none; }
+        .site-banner .banner-left .about-content .about-left .personal-skills {
+          margin-left: 1em; }
+          .site-banner .banner-left .about-content .about-left .personal-skills .p-skills-title {
+            width: 75%; }
+          .site-banner .banner-left .about-content .about-left .personal-skills .p-skill {
+            flex-basis: 30%;
+            opacity: 0;
+            display: none; }
+            .site-banner .banner-left .about-content .about-left .personal-skills .p-skill h3 {
+              text-align: left; }
+          .site-banner .banner-left .about-content .about-left .personal-skills .p-skill:nth-child(1) {
+            animation: slide-left 1s forwards 0.6s; }
+          .site-banner .banner-left .about-content .about-left .personal-skills .p-skill:nth-child(2) {
+            animation: slide-left 1s forwards 0.8s; }
+          .site-banner .banner-left .about-content .about-left .personal-skills .p-skill:nth-child(3) {
+            animation: slide-left 1s forwards 1s; }
+          .site-banner .banner-left .about-content .about-left .personal-skills .p-skill:nth-child(4) {
+            animation: slide-left 1s forwards 1.2s; }
       .site-banner .banner-left .about-content .about-right {
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 100%;
         transition: 2s all ease-out; }
         .site-banner .banner-left .about-content .about-right h1 {
           text-align: center;
           margin-top: 0; }
-        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill {
-          opacity: 0;
-          display: none; }
-          .site-banner .banner-left .about-content .about-right .personal-skills .p-skill h3 {
-            text-align: center; }
-        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(1) {
-          animation: slide-left 1s forwards 0.6s; }
-        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(2) {
-          animation: slide-left 1s forwards 0.8s; }
-        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(3) {
-          animation: slide-left 1s forwards 1s; }
-        .site-banner .banner-left .about-content .about-right .personal-skills .p-skill:nth-child(4) {
-          animation: slide-left 1s forwards 1.2s; }
+        .site-banner .banner-left .about-content .about-right .skillset {
+          width: 100%; }
   .site-banner .banner-right {
     background: #def2f1;
-    position: relative;
     width: 50%;
-    min-height: 100%;
+    height: 100%;
     transform-origin: bottom;
     transform: scaleY(0);
     animation: scaleY-display 1s forwards 0.5s;
@@ -354,7 +363,7 @@ h6 {
 .banner-active {
   width: 100% !important; }
 
-.banner-link-inactive {
+.banner-inactive {
   width: 25% !important; }
 
 .hide-display {
@@ -414,15 +423,15 @@ h6 {
     font-size: 1em;
     text-align: center; }
     .skills-header .skill-title h3 {
-      margin-top: 0.7em; }
+      margin-top: 1.5em; }
 
 .bar-graph {
   width: 100%; }
   .bar-graph .skills-bar {
     width: 100%;
     height: 30px;
-    margin-top: 1em;
-    margin-bottom: 0.75em;
+    margin-top: 1.5em;
+    margin-bottom: 1.25em;
     background: #77bdba; }
     .bar-graph .skills-bar h3 {
       margin: 0;
@@ -440,7 +449,7 @@ h6 {
   flex-direction: column;
   border-left: 2px solid #17252a;
   padding-left: 1em;
-  margin-left: 2em;
+  margin-bottom: 1.5em;
   opacity: 0;
   transition: 1s all ease-out;
   letter-spacing: 2px; }
@@ -590,6 +599,8 @@ h6 {
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
+  .site-wrapper {
+    width: 100%; }
   .main-nav {
     display: none; }
   .site-banner .main-title h1 {
@@ -636,8 +647,6 @@ h6 {
       width: 100%; }
     .site-banner .banner-content {
       position: static; }
-  .site-wrapper {
-    width: 100%; }
   .about-banner {
     flex-direction: column;
     height: 100%; }
@@ -654,18 +663,30 @@ h6 {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
-  .site-wrapper {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; }
-  .site-banner .banner-content h1 {
-    font-size: 3em;
-    text-align: center; }
-  .site-banner .banner-content h2 {
-    font-size: 1.5em;
-    text-align: center; }
+  .site-banner .banner-left {
+    position: static;
+    height: 1250px; }
+    .site-banner .banner-left .about-content {
+      flex-direction: column; }
+      .site-banner .banner-left .about-content .about-left {
+        width: 100%; }
+        .site-banner .banner-left .about-content .about-left .about-me {
+          width: 100%; }
+        .site-banner .banner-left .about-content .about-left .personal-skills {
+          width: 100%;
+          justify-content: center;
+          align-items: center; }
+          .site-banner .banner-left .about-content .about-left .personal-skills div {
+            width: 100%;
+            justify-content: center;
+            align-items: center; }
+      .site-banner .banner-left .about-content .about-right {
+        width: 100%; }
+  .site-banner .banner-right {
+    position: static;
+    height: 800px; }
+  .banner-inactive {
+    width: 100% !important; }
   .box {
     width: 100%; }
     .box .box-head {
@@ -683,20 +704,6 @@ h6 {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 500px) {
-  .site-banner .banner-left {
-    height: 1250px; }
-    .site-banner .banner-left .about-content {
-      flex-direction: column; }
-      .site-banner .banner-left .about-content .about-left {
-        width: 100%; }
-        .site-banner .banner-left .about-content .about-left .about-me {
-          width: 100%; }
-      .site-banner .banner-left .about-content .about-right {
-        width: 100%; }
-  .site-banner .banner-right {
-    height: 800px; }
-  .banner-link h1 {
-    cursor: none; }
   .box {
     width: 450px; } }
 
