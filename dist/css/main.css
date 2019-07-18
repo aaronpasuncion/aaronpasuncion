@@ -169,7 +169,7 @@ h6 {
 .main-header {
   justify-content: space-between;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 0;
   position: relative; }
 
@@ -364,7 +364,7 @@ h6 {
   width: 100% !important; }
 
 .banner-inactive {
-  width: 25% !important; }
+  width: 45% !important; }
 
 .hide-display {
   display: none !important; }
@@ -432,7 +432,7 @@ h6 {
     height: 30px;
     margin-top: 1.5em;
     margin-bottom: 1.25em;
-    background: #77bdba; }
+    background: #def2f1; }
     .bar-graph .skills-bar h3 {
       margin: 0;
       float: right; }
@@ -440,7 +440,7 @@ h6 {
       display: inline-block;
       width: 0%;
       height: 30px;
-      background: #def2f1;
+      background: #17252a;
       transition: 1s all ease-out 1s; }
 
 .box {
@@ -472,11 +472,11 @@ h6 {
   color: #3aafa9;
   cursor: pointer;
   transition: 0.5s all ease-out;
-  padding: 0.5em 1em;
+  padding: 0.5em 2em;
   border: 1px solid #3aafa9; }
   .btn:hover, .nav-btn:hover, .btn-underline:hover {
     background: #3aafa9;
-    color: #fff; }
+    color: #def2f1; }
 
 .nav-btn {
   border: none;
@@ -495,26 +495,14 @@ h6 {
     background: none;
     color: #3aafa9; }
 
-.footer-links .btn-underline {
-  text-decoration: none; }
-
-.about-banner {
-  justify-content: center;
-  align-items: center;
-  height: 775px; }
-  .about-banner .about-img {
-    height: 100%;
-    width: 60%;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/about-banner.jpg") no-repeat center;
-    background-size: cover; }
-  .about-banner .banner-content {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-    width: 40%;
-    height: 100%;
-    color: #fff; }
-    .about-banner .banner-content h1 {
-      font-size: 3em;
-      text-align: center; }
+.footer-links a {
+  font-size: 1.25em;
+  color: #17252a;
+  margin: 0.5em;
+  text-decoration: none;
+  transition: 0.5s all ease-out; }
+  .footer-links a:hover {
+    color: #3aafa9; }
 
 .contact-banner {
   position: relative;
@@ -528,10 +516,10 @@ h6 {
     position: absolute;
     left: -25%;
     top: 20%;
-    background: rgba(0, 0, 0, 0.9);
+    background: #17252a;
     width: 550px;
     height: 450px;
-    color: #fff;
+    color: #def2f1;
     text-align: left; }
     .contact-banner .banner-content h1 {
       font-size: 3em;
@@ -545,14 +533,14 @@ h6 {
       width: 50%; }
     .contact-banner .banner-content form .btn, .contact-banner .banner-content form .nav-btn, .contact-banner .banner-content form .btn-underline {
       background: none;
-      border-color: #fff;
-      color: #fff;
+      border-color: #def2f1;
+      color: #def2f1;
       font-size: 1em;
       margin-top: 0.5em;
       cursor: pointer; }
       .contact-banner .banner-content form .btn:hover, .contact-banner .banner-content form .nav-btn:hover, .contact-banner .banner-content form .btn-underline:hover {
-        background: #fff;
-        color: #000; }
+        background: #def2f1;
+        color: #17252a; }
 
 .portfolio {
   min-height: 100%;
@@ -570,11 +558,18 @@ h6 {
       width: 400px;
       transition: 0.5s all ease-out; }
     .portfolio .project .project-details {
+      color: #def2f1;
       opacity: 0; }
       .portfolio .project .project-details h3 {
         margin-bottom: 0; }
+      .portfolio .project .project-details .btn, .portfolio .project .project-details .nav-btn, .portfolio .project .project-details .btn-underline {
+        border-color: #def2f1;
+        color: #def2f1; }
+        .portfolio .project .project-details .btn:hover, .portfolio .project .project-details .nav-btn:hover, .portfolio .project .project-details .btn-underline:hover {
+          background: #def2f1;
+          color: #17252a; }
     .portfolio .project:hover {
-      background: #fff; }
+      background: #17252a; }
       .portfolio .project:hover .portfolio-img {
         opacity: 0; }
       .portfolio .project:hover .project-details {
@@ -596,6 +591,30 @@ h6 {
     background: url("../img/default-full-image.jpg") no-repeat center;
     background-size: cover; }
 
+.site-banner .center-logo .left-side {
+  background: #17252a; }
+  .site-banner .center-logo .left-side .logo-text {
+    color: #def2f1; }
+
+.site-banner .center-logo .right-side {
+  background: #def2f1; }
+  .site-banner .center-logo .right-side .logo-text {
+    color: #17252a; }
+
+#leftBanner {
+  background: #def2f1; }
+
+#rightBanner {
+  color: #def2f1;
+  background: #17252a; }
+  #rightBanner .banner-link {
+    color: #def2f1; }
+    #rightBanner .banner-link h1::after {
+      background: #def2f1; }
+
+.box {
+  border-color: #def2f1; }
+
 /*==========  Non-Mobile First Method  ==========*/
 /* Large Devices, Wide Screens */
 @media only screen and (max-width: 1200px) {
@@ -605,6 +624,8 @@ h6 {
     display: none; }
   .site-banner .main-title h1 {
     font-size: 4em; }
+  .logo {
+    margin-left: 0.5em; }
   .about-right .personal-skills {
     text-align: center; }
   .menu-btn {
@@ -628,13 +649,8 @@ h6 {
   .site-banner {
     height: 100%;
     flex-direction: column; }
-    .site-banner .main-title {
-      top: 0;
-      right: 0;
-      flex-direction: row;
-      justify-content: center; }
-      .site-banner .main-title h1 {
-        font-size: 3em; }
+    .site-banner .main-title h1 {
+      font-size: 3em; }
     .site-banner .center-logo {
       display: none; }
     .site-banner .banner-left {
@@ -665,7 +681,7 @@ h6 {
 @media only screen and (max-width: 768px) {
   .site-banner .banner-left {
     position: static;
-    height: 1250px; }
+    height: 1300px; }
     .site-banner .banner-left .about-content {
       flex-direction: column; }
       .site-banner .banner-left .about-content .about-left {
@@ -704,7 +720,19 @@ h6 {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 500px) {
+  .site-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; }
+  .site-banner .banner-left .about-content .about-left .personal-skills {
+    margin-left: 0; }
+  .site-banner .banner-right {
+    height: 900px; }
   .box {
-    width: 450px; } }
+    width: 100%; }
+    .box:nth-child(1) {
+      margin-top: 3em; } }
 
 /* Custom, iPhone Retina */

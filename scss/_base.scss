@@ -4,20 +4,14 @@
 ****************************************************/
 
 // variables
-$primary-background: #eee;
-$btn-color: #3aafa9;
+$site-background: #eee;
+$primary-color: #def2f1;
+$secondary-color: #17252a;
+// component item colors
+$item-color: #3aafa9;
+$dark-item-color: #2b7a78;
 $white-text: #fff;
 $dark-text: #000;
-
-//complimentary colors for btn-color
-$box-color1: #77bdba;
-$box-color2: #9ffcf8;
-$box-color3: #297d79;
-
-// test colors
-$dark-blue: #17252a;
-$dark-btn-color: #2b7a78;
-$paper: #def2f1;
 $off-white: #feffff;
 
 // headers
@@ -41,7 +35,7 @@ p {
 
 .text-underline {
   display: inline-block;
-  border-bottom: 2px solid $dark-blue;
+  border-bottom: 2px solid $secondary-color;
 }
 
 // float clear-fix

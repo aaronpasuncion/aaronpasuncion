@@ -10,7 +10,7 @@
 }
 
 .banner-inactive {
-  width: 25% !important;
+  width: 45% !important;
 }
 
 .hide-display {
@@ -63,7 +63,7 @@
     bottom: 0;
     left: 0;
     width: 70%;
-    background: $dark-blue;
+    background: $secondary-color;
   }
   h1:hover {
     &::after {
@@ -73,14 +73,14 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: $dark-blue;
+      background: $secondary-color;
     }
   }
 }
 
 // left-banner
 .skills-header {
-  border-right: 2px solid $dark-blue;
+  border-right: 2px solid $secondary-color;
   padding-right: 0.25em;
   .skill-title {
     font-size: 1em;
@@ -99,7 +99,7 @@
     height: 30px;
     margin-top: 1.5em;
     margin-bottom: 1.25em;
-    background: $box-color1;
+    background: $primary-color;
     h3 {
       margin: 0;
       float: right;
@@ -109,7 +109,7 @@
       display: inline-block;
       width: 0%;
       height: 30px;
-      background: $paper;
+      background: $secondary-color;
       transition: 1s all ease-out 1s;
     }
   }
@@ -120,7 +120,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  border-left: 2px solid $dark-blue;
+  border-left: 2px solid $secondary-color;
   padding-left: 1em;
   margin-bottom: 1.5em;
   opacity: 0;
@@ -149,14 +149,14 @@
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.1em;
-  color: $btn-color;
+  color: $item-color;
   cursor: pointer;
   transition: 0.5s all ease-out;
-  padding: 0.5em 1em;
-  border: 1px solid $btn-color;
+  padding: 0.5em 2em;
+  border: 1px solid $item-color;
   &:hover {
-    background: $btn-color;
-    color: $white-text;
+    background: $item-color;
+    color: $primary-color;
   }
 }
 
@@ -166,7 +166,7 @@
   color: $dark-text;
   &:hover {
     background: none;
-    color: $dark-btn-color;
+    color: $dark-item-color;
   }
 }
 
@@ -179,13 +179,19 @@
   padding-left: 0;
   &:hover {
     background: none;
-    color: $btn-color;
+    color: $item-color;
   }
 }
 
 .footer-links {
-  .btn-underline {
-    // margin: 1em;
+  a {
+    font-size: 1.25em;
+    color: $secondary-color;
+    margin: 0.5em;
     text-decoration: none;
+    transition: 0.5s all ease-out;
+    &:hover {
+      color: $item-color;
+    }
   }
 }

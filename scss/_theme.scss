@@ -1,0 +1,34 @@
+.site-banner {
+  .center-logo {
+    .left-side {
+      background: $secondary-color;
+      .logo-text {
+        color: $primary-color;
+      }
+    }
+    .right-side {
+      background: $primary-color;
+      .logo-text {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+#leftBanner {
+  background: $primary-color;
+}
+#rightBanner {
+  color: $primary-color;
+  background: $secondary-color;
+
+  .banner-link {
+    color: $primary-color;
+    h1::after {
+      background: $primary-color;
+    }
+  }
+}
+
+.box {
+  border-color: $primary-color;
+}

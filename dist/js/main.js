@@ -67,6 +67,7 @@ $(document).ready(function() {
     $("#leftBanner").addClass("banner-active");
     $(".about-content").removeClass("opacity-hide");
     $(".about-right").css("display", "flex");
+    $(".personal-skills").css("display", "flex");
     $(".p-skill").css("display", "flex");
     $(".about-me h3").css("display", "flex");
     if (!$("#create").hasClass("opacity-hide")) {
@@ -82,6 +83,7 @@ $(document).ready(function() {
     $("#leftBanner").removeClass("banner-active");
     $(".about-content").addClass("opacity-hide");
     $(".about-right").css("display", "none");
+    $(".personal-skills").css("display", "none");
     $(".p-skill").css("display", "none");
     // remove banner inactive to the other banner
     $("#rightBanner").removeClass("banner-inactive");

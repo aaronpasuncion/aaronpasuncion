@@ -1,31 +1,3 @@
-// about banner
-.about-banner {
-  justify-content: center;
-  align-items: center;
-  height: 775px;
-  //   width: 100%;
-
-  .about-img {
-    height: 100%;
-    // height: 700px;
-    width: 60%;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-      url("../img/about-banner.jpg") no-repeat center;
-    background-size: cover;
-  }
-
-  .banner-content {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-    width: 40%;
-    height: 100%;
-    color: $white-text;
-    h1 {
-      font-size: 3em;
-      text-align: center;
-    }
-  }
-}
-
 // contact banner
 .contact-banner {
   position: relative;
@@ -40,10 +12,10 @@
     position: absolute;
     left: -25%;
     top: 20%;
-    background: rgba(0, 0, 0, 0.9);
+    background: $secondary-color;
     width: 550px;
     height: 450px;
-    color: $white-text;
+    color: $primary-color;
     text-align: left;
     h1 {
       font-size: 3em;
@@ -61,14 +33,14 @@
       }
       .btn {
         background: none;
-        border-color: $white-text;
-        color: $white-text;
+        border-color: $primary-color;
+        color: $primary-color;
         font-size: 1em;
         margin-top: 0.5em;
         cursor: pointer;
         &:hover {
-          background: $white-text;
-          color: $dark-text;
+          background: $primary-color;
+          color: $secondary-color;
         }
       }
     }
@@ -95,14 +67,23 @@
     }
 
     .project-details {
+      color: $primary-color;
       opacity: 0;
       h3 {
         margin-bottom: 0;
       }
+      .btn {
+        border-color: $primary-color;
+        color: $primary-color;
+        &:hover {
+          background: $primary-color;
+          color: $secondary-color;
+        }
+      }
     }
 
     &:hover {
-      background: $white-text;
+      background: $secondary-color;
       .portfolio-img {
         opacity: 0;
       }
@@ -112,11 +93,7 @@
       }
     }
   }
-  // project images
-  //   #projectOne {
-  //     background: url("../img/about-banner.jpg") no-repeat center;
-  //     background-size: cover;
-  //   }
+
   #projectTwo {
     background: url("../img/about-banner1.jpg") no-repeat center;
     background-size: cover;
