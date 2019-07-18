@@ -53,7 +53,13 @@
   z-index: 9999;
 
   h1 {
+    display: inline-block;
     margin-bottom: 0;
+  }
+  .fas {
+    transition: 0.5s all ease-out;
+    font-size: 1.25em;
+    margin-left: 0.25em;
   }
   h1::after {
     transition: 0.5s all ease-out;
@@ -62,18 +68,21 @@
     height: 3px;
     bottom: 0;
     left: 0;
-    width: 70%;
+    width: 50%;
     background: $secondary-color;
   }
-  h1:hover {
-    &::after {
+  &:hover {
+    h1::after {
       position: absolute;
       content: "";
       height: 3px;
       bottom: 0;
       left: 0;
-      width: 100%;
+      width: 85%;
       background: $secondary-color;
+    }
+    .fas {
+      transform: rotate(90deg);
     }
   }
 }
@@ -152,7 +161,7 @@
   color: $item-color;
   cursor: pointer;
   transition: 0.5s all ease-out;
-  padding: 0.5em 2em;
+  padding: 0.25em 1em;
   border: 1px solid $item-color;
   &:hover {
     background: $item-color;
@@ -185,11 +194,29 @@
 
 .footer-links {
   a {
-    font-size: 1.25em;
+    font-size: 1.5em;
     color: $secondary-color;
-    margin: 0.5em;
+    margin: 0.25em;
     text-decoration: none;
     transition: 0.5s all ease-out;
+    &:nth-child(1)::after {
+      content: "/";
+      font-size: 1em;
+      color: $secondary-color;
+      padding-left: 0.5em;
+    }
+    &:nth-child(2)::after {
+      content: "/";
+      font-size: 1em;
+      color: $secondary-color;
+      padding-left: 0.5em;
+    }
+    &:nth-child(3)::after {
+      content: "/";
+      font-size: 1em;
+      color: $secondary-color;
+      padding-left: 0.5em;
+    }
     &:hover {
       color: $item-color;
     }

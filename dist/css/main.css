@@ -298,17 +298,17 @@ h6 {
     .site-banner .banner-right .sub-title {
       width: 100%;
       position: absolute;
-      margin-right: 2em;
       opacity: 0;
       animation: sub-title 1s forwards 2s;
       text-align: right;
-      bottom: 0;
+      bottom: -5px;
       right: 0;
       z-index: 33; }
       .site-banner .banner-right .sub-title h2 {
         margin: 0; }
 
 .main-footer {
+  color: #17252a;
   height: 150px; }
 
 #lgMenu {
@@ -397,7 +397,12 @@ h6 {
   display: inline-block;
   z-index: 9999; }
   .banner-link h1 {
+    display: inline-block;
     margin-bottom: 0; }
+  .banner-link .fas {
+    transition: 0.5s all ease-out;
+    font-size: 1.25em;
+    margin-left: 0.25em; }
   .banner-link h1::after {
     transition: 0.5s all ease-out;
     position: absolute;
@@ -405,16 +410,18 @@ h6 {
     height: 3px;
     bottom: 0;
     left: 0;
-    width: 70%;
+    width: 50%;
     background: #17252a; }
-  .banner-link h1:hover::after {
+  .banner-link:hover h1::after {
     position: absolute;
     content: "";
     height: 3px;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 85%;
     background: #17252a; }
+  .banner-link:hover .fas {
+    transform: rotate(90deg); }
 
 .skills-header {
   border-right: 2px solid #17252a;
@@ -472,7 +479,7 @@ h6 {
   color: #3aafa9;
   cursor: pointer;
   transition: 0.5s all ease-out;
-  padding: 0.5em 2em;
+  padding: 0.25em 1em;
   border: 1px solid #3aafa9; }
   .btn:hover, .nav-btn:hover, .btn-underline:hover {
     background: #3aafa9;
@@ -496,11 +503,26 @@ h6 {
     color: #3aafa9; }
 
 .footer-links a {
-  font-size: 1.25em;
+  font-size: 1.5em;
   color: #17252a;
-  margin: 0.5em;
+  margin: 0.25em;
   text-decoration: none;
   transition: 0.5s all ease-out; }
+  .footer-links a:nth-child(1)::after {
+    content: "/";
+    font-size: 1em;
+    color: #17252a;
+    padding-left: 0.5em; }
+  .footer-links a:nth-child(2)::after {
+    content: "/";
+    font-size: 1em;
+    color: #17252a;
+    padding-left: 0.5em; }
+  .footer-links a:nth-child(3)::after {
+    content: "/";
+    font-size: 1em;
+    color: #17252a;
+    padding-left: 0.5em; }
   .footer-links a:hover {
     color: #3aafa9; }
 
