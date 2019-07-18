@@ -502,29 +502,27 @@ h6 {
     background: none;
     color: #3aafa9; }
 
-.footer-links a {
+.main-footer .footer-links a {
   font-size: 1.5em;
   color: #17252a;
   margin: 0.25em;
   text-decoration: none;
   transition: 0.5s all ease-out; }
-  .footer-links a:nth-child(1)::after {
+  .main-footer .footer-links a:nth-child(1)::after {
     content: "/";
     font-size: 1em;
     color: #17252a;
     padding-left: 0.5em; }
-  .footer-links a:nth-child(2)::after {
+  .main-footer .footer-links a:nth-child(2)::after {
     content: "/";
     font-size: 1em;
     color: #17252a;
     padding-left: 0.5em; }
-  .footer-links a:nth-child(3)::after {
-    content: "/";
-    font-size: 1em;
-    color: #17252a;
-    padding-left: 0.5em; }
-  .footer-links a:hover {
+  .main-footer .footer-links a:hover {
     color: #3aafa9; }
+
+.main-footer h2 {
+  margin-left: 1em; }
 
 .contact-banner {
   position: relative;

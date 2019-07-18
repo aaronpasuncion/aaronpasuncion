@@ -192,33 +192,33 @@
   }
 }
 
-.footer-links {
-  a {
-    font-size: 1.5em;
-    color: $secondary-color;
-    margin: 0.25em;
-    text-decoration: none;
-    transition: 0.5s all ease-out;
-    &:nth-child(1)::after {
-      content: "/";
-      font-size: 1em;
+.main-footer {
+  .footer-links {
+    a {
+      font-size: 1.5em;
       color: $secondary-color;
-      padding-left: 0.5em;
+      margin: 0.25em;
+      text-decoration: none;
+      transition: 0.5s all ease-out;
+      &:nth-child(1)::after {
+        content: "/";
+        font-size: 1em;
+        color: $secondary-color;
+        padding-left: 0.5em;
+      }
+      &:nth-child(2)::after {
+        content: "/";
+        font-size: 1em;
+        color: $secondary-color;
+        padding-left: 0.5em;
+      }
+
+      &:hover {
+        color: $item-color;
+      }
     }
-    &:nth-child(2)::after {
-      content: "/";
-      font-size: 1em;
-      color: $secondary-color;
-      padding-left: 0.5em;
-    }
-    &:nth-child(3)::after {
-      content: "/";
-      font-size: 1em;
-      color: $secondary-color;
-      padding-left: 0.5em;
-    }
-    &:hover {
-      color: $item-color;
-    }
+  }
+  h2 {
+    margin-left: 1em;
   }
 }
