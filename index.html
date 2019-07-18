@@ -11,6 +11,10 @@
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
@@ -39,9 +43,6 @@
               <a href="index.html" class="nav-btn">Home</a>
             </li>
             <li class="nav-link">
-              <a href="about.html" class="nav-btn">about</a>
-            </li>
-            <li class="nav-link">
               <a href="contact.html" class="nav-btn">contact</a>
             </li>
             <li class="nav-link">
@@ -50,96 +51,213 @@
           </ul>
         </nav>
       </header>
-      <div class="site-banner flex">
-        <div class="banner-content">
-          <h1>Banner content</h1>
-          <h2>Your text here</h2>
-        </div>
-      </div>
       <main>
-        <div class="main-intro flex flex-center flex-col">
-          <p class="text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero optio
-            ullam dolore, repudiandae culpa reprehenderit mollitia facere atque
-            tempora dolorum libero excepturi quas blanditiis, voluptate ratione
-            perspiciatis qui explicabo minus?
-          </p>
-          <div class="flex flex-center">
-            <a href="" class="btn">Learn More</a>
+        <div class="site-banner flex">
+          <div class="banner-left" id="leftBanner">
+            <div class="main-title">
+              <h1>Aaron</h1>
+              <h1>Asuncion</h1>
+            </div>
+            <div class="banner-link" id="aboutMe">
+              <h1>about me.</h1>
+            </div>
+            <div class="about-content flex opacity-hide">
+              <div class="about-left">
+                <div class="about-me">
+                  <h3>
+                    A junior front-end developer who is passionate about web
+                    development and design. I enjoy developing websites that
+                    appeal to the user's experience as well as creating an
+                    overall well-structured user interface.
+                  </h3>
+                </div>
+
+                <!-- personal skills -->
+                <div class="flex flex-col personal-skills">
+                  <div class="flex flex-center p-skills-title">
+                    <h1 class="text-underline">Personal Skills</h1>
+                  </div>
+                  <div class="flex">
+                    <div class="p-skill flex flex-col">
+                      <i class="far fa-check-circle fa-3x"></i>
+                      <h3>
+                        Problem <br />
+                        Solver
+                      </h3>
+                    </div>
+                    <div class="p-skill flex flex-col">
+                      <i class="far fa-eye fa-3x"></i>
+                      <h3>Precise</h3>
+                    </div>
+                    <div class="p-skill flex flex-col">
+                      <i class="fas fa-retweet fa-3x"></i>
+                      <h3>adaptive</h3>
+                    </div>
+                  </div>
+                  <div class="flex">
+                    <div class="p-skill flex flex-col">
+                      <i class="fas fa-users fa-3x"></i>
+                      <h3>Cooperative</h3>
+                    </div>
+                    <div class="p-skill flex flex-col">
+                      <i class="fas fa-palette fa-3x"></i>
+                      <h3>Creative</h3>
+                    </div>
+                    <div class="p-skill flex flex-col">
+                      <i class="fas fa-layer-group fa-3x"></i>
+                      <h3>organized</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about-right flex">
+                <!-- technical skills -->
+                <div class="skillset">
+                  <div class="flex flex-center">
+                    <h1 class="text-underline">Technical Skills</h1>
+                  </div>
+                  <div class="flex">
+                    <div class="skills-header flex flex-col">
+                      <div class="skill-title">
+                        <h3>
+                          HTML5
+                        </h3>
+                      </div>
+                      <div class="skill-title">
+                        <h3>
+                          CSS3
+                        </h3>
+                      </div>
+                      <div class="skill-title">
+                        <h3>
+                          SCSS
+                        </h3>
+                      </div>
+                      <div class="skill-title">
+                        <h3>
+                          JavaScript
+                        </h3>
+                      </div>
+                      <div class="skill-title">
+                        <h3>
+                          JQuery
+                        </h3>
+                      </div>
+                      <div class="skill-title">
+                        <h3>
+                          Adobe XD
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="bar-graph flex flex-col">
+                      <div class="skills-bar">
+                        <div class="bar-capacity"></div>
+                        <h3>
+                          75%
+                        </h3>
+                      </div>
+                      <div class="skills-bar">
+                        <div class="bar-capacity"></div>
+                        <h3>
+                          65%
+                        </h3>
+                      </div>
+                      <div class="skills-bar">
+                        <div class="bar-capacity"></div>
+                        <h3>
+                          65%
+                        </h3>
+                      </div>
+                      <div class="skills-bar">
+                        <div class="bar-capacity"></div>
+                        <h3>
+                          60%
+                        </h3>
+                      </div>
+                      <div class="skills-bar">
+                        <div class="bar-capacity"></div>
+                        <h3>
+                          65%
+                        </h3>
+                      </div>
+                      <div class="skills-bar">
+                        <div class="bar-capacity"></div>
+                        <h3>
+                          70%
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <!--  -->
-        <div class="box-container flex flex-wrap">
-          <div class="box">
-            <h2>box-title</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-              porro illo! Optio commodi velit ea ducimus nulla rerum quo
-              molestias.
-            </p>
-            <a href="" class="btn-underline">learn more</a>
+          <div class="banner-right" id="rightBanner">
+            <div class="center-logo">
+              <div class="left-side flex flex-center">
+                <h1 class="logo-text">A</h1>
+              </div>
+              <div class="right-side flex flex-center">
+                <h1 class="logo-text">A</h1>
+              </div>
+            </div>
+            <div class="banner-link" id="creation">
+              <h1>Creation.</h1>
+            </div>
+            <div class="opacity-hide" id="create">
+              <div class="flex box">
+                <h1 class="box-head">Plan</h1>
+                <div class="box-text">
+                  <h3>
+                    Organizing an efficient plan plays an important role when
+                    developing my websites layouts. Creating a procedure to
+                    develop the project helps with time managment and overall
+                    efficiceny.
+                  </h3>
+                </div>
+              </div>
+              <div class="flex box">
+                <h1 class="box-head">Structure</h1>
+                <div class="box-text">
+                  <h3>
+                    Creating a rough layout with design tools such as Adobe XD
+                    helps me easily create the website as well as develop a
+                    prototype that includes animations to get a realistic feel.
+                    I use these prototypes as references when developing my
+                    projects as it provides a visual aspect of what I need to
+                    accomplish
+                  </h3>
+                </div>
+              </div>
+              <div class="flex box">
+                <h1 class="box-head">Create</h1>
+                <div class="box-text">
+                  <h3>
+                    During development my main focus is to pay attention to
+                    detail and appeal to the user experience by making the site
+                    dynamic, ashetically pleasing as well as provide quality
+                    content.
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="sub-title">
+              <h2>Junior Front-End Developer</h2>
+            </div>
           </div>
-          <div class="box">
-            <h2>box-title</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-              porro illo! Optio commodi velit ea ducimus nulla rerum quo
-              molestias.
-            </p>
-            <a href="" class="btn-underline">learn more</a>
-          </div>
-          <div class="box">
-            <h2>box-title</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-              porro illo! Optio commodi velit ea ducimus nulla rerum quo
-              molestias.
-            </p>
-            <a href="" class="btn-underline">learn more</a>
-          </div>
-        </div>
-        <!--  -->
-        <div class="img-container flex">
-          <div class="img-box"></div>
-          <div class="img-description ">
-            <h2>Image Description</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
-              quasi recusandae amet quae reiciendis, quas ad molestias
-              consectetur magnam necessitatibus.
-            </p>
-          </div>
-        </div>
-        <div class="box-container flex flex-center flex-col">
-          <h1>Full box</h1>
-          <p class="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ex!
-            Placeat quam dolorum vitae qui possimus, doloremque amet nostrum
-            minus quibusdam rem mollitia voluptatem consequatur a eaque, facere
-            ipsum architecto iusto ad ea nobis, pariatur nulla repellendus
-            animi? Quaerat, cum?
-          </p>
-          <a href="" class="btn">subscribe</a>
-        </div>
-        <div class="full-container">
-          <div class="cover-text flex flex-center flex-wrap">
-            <h1>Full</h1>
-            <span>-</span>
-            <h1>Container</h1>
-            <span>-</span>
-            <h1>Header</h1>
-          </div>
+          <!-- <div class="about-box"></div> -->
         </div>
       </main>
+
       <footer class="main-footer flex flex-center">
         <!-- <a href="" class="btn">Back To Top</a> -->
-        <div class="flex footer-links">
-          <a href="index.html" class="btn-underline">Home</a>
-          <a href="about.html" class="btn-underline">About</a>
-          <a href="contact.html" class="btn-underline">Contact</a>
-          <a href="portfolio.html" class="btn-underline">Portfolio</a>
+        <div class="flex flex-center footer-links">
+          <a href="index.html">Home</a>
+          <a href="contact.html">Contact</a>
+          <a href="portfolio.html">Portfolio</a>
         </div>
-        <h2>Company Name &copy; 2019</h2>
+        <h2>Aaron Asuncion &copy;2019</h2>
       </footer>
     </div>
 
@@ -150,9 +268,6 @@
         <ul class="flex flex-wrap flex-center flex-col">
           <li class="nav-link">
             <a href="index.html" class="nav-btn">Home</a>
-          </li>
-          <li class="nav-link">
-            <a href="about.html" class="nav-btn">about</a>
           </li>
           <li class="nav-link">
             <a href="contact.html" class="nav-btn">contact</a>
