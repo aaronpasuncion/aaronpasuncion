@@ -52,11 +52,9 @@ p {
 //keyframes
 @keyframes scaleY-display {
   from {
-    display: none;
     transform: scaley(0);
   }
   to {
-    display: flex;
     transform: scaleY(1);
   }
 }
