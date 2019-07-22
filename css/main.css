@@ -29,8 +29,10 @@ p {
 
 @keyframes scaleY-display {
   from {
+    display: none;
     transform: scaley(0); }
   to {
+    display: flex;
     transform: scaleY(1); } }
 
 @keyframes scaleX-display {
@@ -193,6 +195,7 @@ h6 {
 .site-banner {
   height: 850px;
   width: 100%;
+  display: none;
   position: relative; }
   .site-banner .center-logo {
     position: absolute;
@@ -221,11 +224,9 @@ h6 {
     position: absolute;
     display: flex;
     flex-direction: column;
-    z-index: 9999;
     line-height: 1;
     bottom: 0;
     opacity: 0;
-    transition: 1s all ease-out;
     animation: main-title 1s forwards 2s; }
     .site-banner .main-title h1 {
       font-size: 5em;
@@ -252,8 +253,7 @@ h6 {
     width: 50%;
     transform-origin: top;
     transform: scaleY(0);
-    animation: scaleY-display 1s forwards 0.5s;
-    height: 100%;
+    animation: scaleY-display 1s forwards 1s;
     padding: 1em;
     transition: 1s all ease-out; }
     .site-banner .banner-left .about-content {
@@ -307,15 +307,14 @@ h6 {
   .site-banner .banner-right {
     background: #def2f1;
     width: 50%;
-    height: 100%;
     transform-origin: bottom;
     transform: scaleY(0);
-    animation: scaleY-display 1s forwards 0.5s;
+    animation: scaleY-display 1s forwards 1s;
     transition: 1s all ease-out;
     padding: 1em; }
     .site-banner .banner-right .creation-content {
       height: 80%;
-      display: flex;
+      display: none;
       align-content: center;
       justify-content: center;
       flex-direction: column;
@@ -328,6 +327,8 @@ h6 {
         animation: slide-left 1s forwards 1.2s; }
 
 .main-footer {
+  opacity: 0;
+  animation: opacity-show 1s forwards 1s;
   color: #17252a;
   height: 150px; }
 

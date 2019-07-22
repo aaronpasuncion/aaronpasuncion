@@ -1,5 +1,6 @@
 $(document).ready(function() {
   // home page
+  $(".site-banner").css("display", "flex");
 
   // about section
   $("#aboutMe").on("click", function() {
@@ -104,7 +105,7 @@ $(document).ready(function() {
     // display right banner content and remove opacity hide
     $("#rightBanner").addClass("banner-active");
     $("#create").removeClass("opacity-hide");
-    $("#create").addClass("creation-content");
+    $("#create").css("display", "flex");
     // add banner inactive to the other banner
     $("#leftBanner").addClass("banner-inactive");
   }
@@ -113,8 +114,9 @@ $(document).ready(function() {
   function creationHide() {
     // if user presses the creation link the second time, re-apply opacity hide styles and remove creation-content and banner-active classes
     $("#rightBanner").removeClass("banner-active");
-    $("#create").removeClass("creation-content");
+    // $("#create").removeClass("creation-content");
     $("#create").addClass("opacity-hide");
+    $("#create").css("display", "none");
     // remove banner inactive from the other banner
     $("#leftBanner").removeClass("banner-inactive");
   }
