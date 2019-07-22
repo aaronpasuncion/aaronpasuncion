@@ -55,21 +55,27 @@ $(document).ready(function() {
   //display about section
   function aboutDisplay() {
     let $barCapacity = $(".bar-capacity");
-    //retrieve the text of the percentrage of each skill and use that value for the width of the skill bar
-    $barCapacity.each(function(index) {
-      var $barFill = $(this)
-        .next()
-        .text();
-      $(this).css("width", $barFill);
-    });
 
     //display personal skills section
     $("#leftBanner").addClass("banner-active");
     $(".about-content").removeClass("opacity-hide");
     $(".about-right").css("display", "flex");
     $(".personal-skills").css("display", "flex");
-    $(".p-skill").css("display", "flex");
-    $(".about-me h3").css("display", "flex");
+    $(".p-skill-header").css("display", "flex");
+    $(".p-skill-col").css("display", "flex");
+    $(".about-me").css("display", "flex");
+    $("abour-right").css("display", "flex");
+    //retrieve the text of the percentrage of each skill and use that value for the width of the skill bar
+    window.setTimeout(function() {
+      $barCapacity.each(function(index) {
+        var $barFill = $(this)
+          .next()
+          .text();
+        $(this).css("width", $barFill);
+      });
+    }, 2000);
+
+    // if the left banner content isn't hidden, then hide it
     if (!$("#create").hasClass("opacity-hide")) {
       $("#create").addClass("opacity-hide");
       $("#rightBanner").removeClass("banner-inactive");
@@ -83,8 +89,11 @@ $(document).ready(function() {
     $("#leftBanner").removeClass("banner-active");
     $(".about-content").addClass("opacity-hide");
     $(".about-right").css("display", "none");
+    $(".about-me").css("display", "none");
     $(".personal-skills").css("display", "none");
-    $(".p-skill").css("display", "none");
+    $(".p-skill-header").css("display", "none");
+    $(".p-skill-col").css("display", "none");
+    $("abour-right").css("display", "none");
     // remove banner inactive to the other banner
     $("#rightBanner").removeClass("banner-inactive");
   }

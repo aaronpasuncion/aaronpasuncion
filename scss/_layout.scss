@@ -152,6 +152,21 @@ h6 {
     }
   }
 
+  .sub-title {
+    width: 100%;
+    color: $primary-color;
+    position: absolute;
+    opacity: 0;
+    animation: sub-title 1s forwards 2s;
+    text-align: right;
+    bottom: -5px;
+    right: 0;
+    z-index: 999;
+    h2 {
+      margin: 0;
+    }
+  }
+
   .banner-left {
     background: $item-color;
     position: relative;
@@ -167,55 +182,71 @@ h6 {
     // about me description
     .about-content {
       transition: 1s all ease-out;
-      margin-top: 1em;
+      margin-top: 3em;
       width: 100%;
       .about-left {
-        width: 100%;
+        width: 40%;
         .about-me {
           border-left: 2px solid $secondary-color;
           padding-left: 1em;
-          width: 400px;
+          // width: 500px;
+          display: none;
+          opacity: 0;
+          animation: opacity-show 1s forwards 1s;
+
           h3 {
-            display: none;
+            font-size: 1.25em;
+            opacity: 0;
+            animation: opacity-show 1s forwards 1.2s;
           }
         }
 
         .personal-skills {
-          margin-left: 1em;
-          .p-skills-title {
-            width: 75%;
-          }
-          .p-skill {
-            flex-basis: 30%;
-            opacity: 0;
+          margin-right: 3em;
+
+          .p-skill-header {
             display: none;
-            h3 {
-              text-align: left;
+            opacity: 0;
+            animation: opacity-show 1s forwards 1.6s;
+          }
+
+          .p-skill-col {
+            display: none;
+            opacity: 0;
+            flex-basis: 30%;
+
+            .p-skill {
+              i {
+                font-size: 2.5em;
+              }
+              h3 {
+                font-size: 1em;
+              }
             }
           }
-          .p-skill:nth-child(1) {
-            animation: slide-left 1s forwards 0.6s;
+          .p-skill-col:nth-child(1) {
+            animation: opacity-show 1s forwards 1.8s;
           }
-          .p-skill:nth-child(2) {
-            animation: slide-left 1s forwards 0.8s;
+          .p-skill-col:nth-child(2) {
+            animation: opacity-show 1s forwards 2s;
           }
-          .p-skill:nth-child(3) {
-            animation: slide-left 1s forwards 1s;
-          }
-          .p-skill:nth-child(4) {
-            animation: slide-left 1s forwards 1.2s;
+          .p-skill-col:nth-child(3) {
+            animation: opacity-show 1s forwards 2.2s;
           }
         }
       }
       .about-right {
+        display: none;
+        opacity: 0;
+        animation: opacity-show 1s forwards 2.4s;
+
         justify-content: center;
         align-items: center;
         // width: 450px;
-        width: 100%;
+        width: 60%;
         transition: 2s all ease-out;
         h1 {
-          text-align: center;
-          margin-top: 0;
+          margin: 0;
         }
         .skillset {
           // increase the technical skills section to 100%
@@ -256,20 +287,6 @@ h6 {
       .box:nth-child(3) {
         // background: $box-color3;
         animation: slide-left 1s forwards 1.2s;
-      }
-    }
-
-    .sub-title {
-      width: 100%;
-      position: absolute;
-      opacity: 0;
-      animation: sub-title 1s forwards 2s;
-      text-align: right;
-      bottom: -5px;
-      right: 0;
-      z-index: 33;
-      h2 {
-        margin: 0;
       }
     }
   }

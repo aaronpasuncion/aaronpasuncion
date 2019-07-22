@@ -38,6 +38,10 @@ p {
   border-bottom: 2px solid $secondary-color;
 }
 
+.section-header {
+  font-size: 2em;
+}
+
 // float clear-fix
 .clearfix {
   content: "";
@@ -102,6 +106,17 @@ p {
     margin-left: 0;
   }
 }
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    margin-left: 2em;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
 @keyframes slide-left-display {
   from {
     display: none;
