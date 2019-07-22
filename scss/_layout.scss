@@ -101,8 +101,8 @@ h6 {
 .site-banner {
   height: 850px;
   width: 100%;
+  display: none;
   position: relative;
-
   .center-logo {
     position: absolute;
     display: flex;
@@ -137,11 +137,9 @@ h6 {
     position: absolute;
     display: flex;
     flex-direction: column;
-    z-index: 9999;
     line-height: 1;
     bottom: 0;
     opacity: 0;
-    transition: 1s all ease-out;
     animation: main-title 1s forwards 2s;
     h1 {
       font-size: 5em;
@@ -174,8 +172,8 @@ h6 {
     width: 50%;
     transform-origin: top;
     transform: scaleY(0);
-    animation: scaleY-display 1s forwards 0.5s;
-    height: 100%;
+    animation: scaleY-display 1s forwards 1s;
+    // height: 100%;
     padding: 1em;
     transition: 1s all ease-out;
 
@@ -263,15 +261,15 @@ h6 {
     // right: 0;
     background: $primary-color;
     width: 50%;
-    height: 100%;
+    // height: 100%;
     transform-origin: bottom;
     transform: scaleY(0);
-    animation: scaleY-display 1s forwards 0.5s;
+    animation: scaleY-display 1s forwards 1s;
     transition: 1s all ease-out;
     padding: 1em;
     .creation-content {
       height: 80%;
-      display: flex;
+      display: none;
       align-content: center;
       justify-content: center;
       flex-direction: column;
@@ -293,6 +291,8 @@ h6 {
 }
 
 .main-footer {
+  opacity: 0;
+  animation: opacity-show 1s forwards 1s;
   color: $secondary-color;
   height: 150px;
 }
