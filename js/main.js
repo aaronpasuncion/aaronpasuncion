@@ -69,7 +69,7 @@ $(document).ready(function() {
     //retrieve the text of the percentrage of each skill and use that value for the width of the skill bar
     window.setTimeout(function() {
       $barCapacity.each(function(index) {
-        var $barFill = $(this)
+        let $barFill = $(this)
           .next()
           .text();
         $(this).css("width", $barFill);
@@ -87,6 +87,8 @@ $(document).ready(function() {
 
   // hide left banner content
   function aboutHide() {
+    let $barCapacity = $(".bar-capacity");
+
     $("#leftBanner").removeClass("banner-active");
     $(".about-content").addClass("opacity-hide");
     $(".about-right").css("display", "none");
@@ -97,6 +99,14 @@ $(document).ready(function() {
     $("abour-right").css("display", "none");
     // remove banner inactive to the other banner
     $("#rightBanner").removeClass("banner-inactive");
+
+    // reset the technical skill bar graph
+    $barCapacity.each(function(index) {
+      let $barFill = $(this)
+        .next()
+        .text();
+      $(this).css("width", "0");
+    });
   }
 
   /* CREATION SECTION FUNCTIONS*/
@@ -105,7 +115,7 @@ $(document).ready(function() {
     // display right banner content and remove opacity hide
     $("#rightBanner").addClass("banner-active");
     $("#create").removeClass("opacity-hide");
-    $("#create").css("display", "flex");
+    $(".creation-content").css("display", "flex");
     // add banner inactive to the other banner
     $("#leftBanner").addClass("banner-inactive");
   }
@@ -116,7 +126,7 @@ $(document).ready(function() {
     $("#rightBanner").removeClass("banner-active");
     // $("#create").removeClass("creation-content");
     $("#create").addClass("opacity-hide");
-    $("#create").css("display", "none");
+    $(".creation-content").css("display", "none");
     // remove banner inactive from the other banner
     $("#leftBanner").removeClass("banner-inactive");
   }
