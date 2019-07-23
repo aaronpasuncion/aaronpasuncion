@@ -69,7 +69,7 @@ $(document).ready(function() {
     //retrieve the text of the percentrage of each skill and use that value for the width of the skill bar
     window.setTimeout(function() {
       $barCapacity.each(function(index) {
-        var $barFill = $(this)
+        let $barFill = $(this)
           .next()
           .text();
         $(this).css("width", $barFill);
@@ -87,6 +87,8 @@ $(document).ready(function() {
 
   // hide left banner content
   function aboutHide() {
+    let $barCapacity = $(".bar-capacity");
+
     $("#leftBanner").removeClass("banner-active");
     $(".about-content").addClass("opacity-hide");
     $(".about-right").css("display", "none");
@@ -97,6 +99,14 @@ $(document).ready(function() {
     $("abour-right").css("display", "none");
     // remove banner inactive to the other banner
     $("#rightBanner").removeClass("banner-inactive");
+
+    // reset the technical skill bar graph
+    $barCapacity.each(function(index) {
+      let $barFill = $(this)
+        .next()
+        .text();
+      $(this).css("width", "0");
+    });
   }
 
   /* CREATION SECTION FUNCTIONS*/
