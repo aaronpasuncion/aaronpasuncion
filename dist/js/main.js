@@ -105,7 +105,7 @@ $(document).ready(function() {
     // display right banner content and remove opacity hide
     $("#rightBanner").addClass("banner-active");
     $("#create").removeClass("opacity-hide");
-    $("#create").css("display", "flex");
+    $(".creation-content").css("display", "flex");
     // add banner inactive to the other banner
     $("#leftBanner").addClass("banner-inactive");
   }
@@ -116,7 +116,7 @@ $(document).ready(function() {
     $("#rightBanner").removeClass("banner-active");
     // $("#create").removeClass("creation-content");
     $("#create").addClass("opacity-hide");
-    $("#create").css("display", "none");
+    $(".creation-content").css("display", "none");
     // remove banner inactive from the other banner
     $("#leftBanner").removeClass("banner-inactive");
   }

@@ -277,18 +277,14 @@ h6 {
       align-content: center;
       justify-content: center;
       flex-direction: column;
-      transition: 1s all ease-out;
       .box:nth-child(1) {
-        // background: $box-color1;
-        animation: slide-left 1s forwards 0.8s;
+        animation: slide-left 1s forwards 1.4s;
       }
       .box:nth-child(2) {
-        // background: $box-color2;
-        animation: slide-left 1s forwards 1s;
+        animation: slide-left 1s forwards 1.6s;
       }
       .box:nth-child(3) {
-        // background: $box-color3;
-        animation: slide-left 1s forwards 1.2s;
+        animation: slide-left 1s forwards 1.8s;
       }
     }
   }
