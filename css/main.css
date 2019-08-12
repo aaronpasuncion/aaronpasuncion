@@ -139,9 +139,11 @@ h6 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase; }
 
-.logo a {
-  text-decoration: none;
-  color: #000; }
+.logo {
+  margin-bottom: 0.25em; }
+  .logo a {
+    text-decoration: none;
+    color: #000; }
 
 .menu-btn {
   position: absolute;
@@ -181,21 +183,22 @@ h6 {
 
 .main-header {
   opacity: 0;
+  margin-top: 1em;
   animation: opacity-show 1s forwards 1s;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1em;
-  margin-bottom: 0;
   position: relative; }
 
 .main-nav {
+  margin-bottom: 0;
   list-style: none;
   font-size: 1.1em; }
   .main-nav .nav-link .btn, .main-nav .nav-link .nav-btn, .main-nav .nav-link .btn-underline {
-    padding-right: 0; }
+    padding-right: 0;
+    margin-bottom: 0; }
 
 .site-banner {
-  height: 850px;
+  height: 825px;
   width: 100%;
   display: none;
   position: relative; }
@@ -589,16 +592,17 @@ h6 {
   min-height: 100%;
   width: 100%; }
   .portfolio .project {
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    flex-basis: 33.33%;
     object-fit: cover;
     margin: 1em;
     position: relative;
     transition: 0.5s all ease-out; }
     .portfolio .project .portfolio-img {
       position: absolute;
-      height: 400px;
-      width: 400px;
+      height: 300px;
+      width: 300px;
       transition: 0.5s all ease-out; }
     .portfolio .project .project-details {
       color: #def2f1;
