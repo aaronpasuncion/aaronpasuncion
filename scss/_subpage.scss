@@ -52,11 +52,12 @@
 .portfolio {
   min-height: 100%;
   width: 100%;
+  margin-top: 5em;
+  justify-content: center;
 
   .project {
     height: 300px;
     width: 300px;
-    flex-basis: 33.33%;
     object-fit: cover;
     margin: 1em;
     position: relative;
