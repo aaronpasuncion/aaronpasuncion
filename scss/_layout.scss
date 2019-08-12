@@ -30,6 +30,7 @@ h6 {
   text-transform: uppercase;
 }
 .logo {
+  margin-bottom: 0.25em;
   a {
     text-decoration: none;
     color: $dark-text;
@@ -84,26 +85,27 @@ h6 {
 //header
 .main-header {
   opacity: 0;
+  margin-top: 1em;
   animation: opacity-show 1s forwards 1s;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1em;
-  margin-bottom: 0;
   position: relative;
 }
 .main-nav {
+  margin-bottom: 0;
   list-style: none;
   font-size: 1.1em;
   .nav-link {
     .btn {
       padding-right: 0;
+      margin-bottom: 0;
     }
   }
 }
 
 //site banner
 .site-banner {
-  height: 850px;
+  height: 825px;
   width: 100%;
   display: none;
   position: relative;

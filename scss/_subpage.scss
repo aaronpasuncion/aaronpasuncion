@@ -54,16 +54,17 @@
   width: 100%;
 
   .project {
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
+    flex-basis: 33.33%;
     object-fit: cover;
     margin: 1em;
     position: relative;
     transition: 0.5s all ease-out;
     .portfolio-img {
       position: absolute;
-      height: 400px;
-      width: 400px;
+      height: 300px;
+      width: 300px;
       transition: 0.5s all ease-out;
     }
 
