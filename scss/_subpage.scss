@@ -61,12 +61,12 @@
     object-fit: cover;
     margin: 1em;
     position: relative;
-    transition: 0.5s all ease-out;
+    transition: 0.25s all ease-out;
     .portfolio-img {
       position: absolute;
       height: 300px;
       width: 300px;
-      transition: 0.5s all ease-out;
+      transition: 0.25s all ease-out;
     }
 
     .project-details {
